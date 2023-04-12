@@ -22,8 +22,11 @@ public class EnemyController : MonoBehaviour
         if(time >= 3f)
         {
             int horizontal = Random.Range(-1, 2); 
-            int vertical = Random.Range(-1, 2); 
-            movement = new Vector2(horizontal, vertical);
+            int vertical = Random.Range(-1, 2);
+            if(horizontal != 0 && vertical != 0)
+            { 
+                movement = new Vector2(horizontal, vertical);
+            }
             time = 0f;
         }
         rigidbody2d.velocity = movement * speed;
