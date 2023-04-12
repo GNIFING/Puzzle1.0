@@ -8,8 +8,8 @@ public class EnemyController : MonoBehaviour
     public Rigidbody2D rigidbody2d; // Reference to the player's Rigidbody2D component
     public float time;
     public Vector2 movement;
-    public Transform player;
-
+    
+    private Transform player;
     private UnityEngine.AI.NavMeshAgent enemy;
 
     // Start is called before the first frame update
