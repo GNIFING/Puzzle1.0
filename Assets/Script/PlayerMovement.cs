@@ -5,8 +5,15 @@ public class PlayerMovement : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     public float speed = 5f; // The speed at which the player moves
-    public int score = 0;
     private Rigidbody2D rigidbody2d; // Reference to the player's Rigidbody2D component
+    
+    // Score and health(or stamina)
+    public int score = 0;
+    public int maxHealth = 100;
+    public int health = 100;
+    // For set and update UI
+    public HealthBar healthbar;
+    public inGameScoreBoard scoreBoard;
 
     private void Awake()
     {
@@ -25,6 +32,16 @@ public class PlayerMovement : MonoBehaviour
 
         // Set the velocity of the player's Rigidbody2D component
         rigidbody2d.velocity = movement * speed;
+
+        // Set the score and health
+        scoreBoard.SetScore(score);
+
+        // Set max health 
+        healthbar.SetMaxHealth(maxHealth);
+
+        // Set the health 
+        healthbar.SetHealth(health);
+
     }
 
     public void AddScore()
