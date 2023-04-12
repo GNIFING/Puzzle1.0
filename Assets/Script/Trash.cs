@@ -17,5 +17,9 @@ public class Trash : MonoBehaviour
             collision.gameObject.GetComponent<PlayerMovement>().AddScore();
             Destroy(this.gameObject);
         }
+        else if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Physics2D.IgnoreCollision(collision.collider, collision.otherCollider);
+        }
     }
 }
