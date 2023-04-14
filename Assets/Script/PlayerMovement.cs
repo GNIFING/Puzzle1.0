@@ -15,6 +15,10 @@ public class PlayerMovement : MonoBehaviour
     public HealthBar healthbar;
     public inGameScoreBoard scoreBoard;
 
+    // Set magnet speed and radius
+    public float magnetSpeed = 5f;
+    public float magnetRadius = 5f;
+
     private void Awake()
     {
         // Get reference to the Rigidbody2D component
