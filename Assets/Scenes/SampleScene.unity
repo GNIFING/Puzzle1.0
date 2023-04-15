@@ -39760,12 +39760,10 @@ MonoBehaviour:
   scoreText: {fileID: 178032337}
   speed: 5
   score: 0
-  maxHealth: 100
-  health: 100
-  healthbar: {fileID: 107746776}
+  maxStamina: 100
+  stamina: 100
+  staminaBar: {fileID: 107746776}
   scoreBoard: {fileID: 492119757}
-  magnetSpeed: 5
-  magnetRadius: 5
 --- !u!212 &1758804480
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -7,17 +7,17 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f; // The speed at which the player moves
     private Rigidbody2D rigidbody2d; // Reference to the player's Rigidbody2D component
     
-    // Score and health(or stamina)
+    // Score and stamina
     public int score = 0;
-    public int maxHealth = 100;
-    public int health = 100;
+    public int maxStamina = 100;
+    public int stamina = 100;
     // For set and update UI
-    public HealthBar healthbar;
+    public GameBar staminaBar;
     public inGameScoreBoard scoreBoard;
 
-    // Set magnet speed and radius
-    public float magnetSpeed = 5f;
-    public float magnetRadius = 5f;
+    // // Set magnet speed and radius
+    // public float magnetSpeed = 5f;
+    // public float magnetRadius = 5f;
 
     private void Awake()
     {
@@ -40,11 +40,9 @@ public class PlayerMovement : MonoBehaviour
         // Set the score and health
         scoreBoard.SetScore(score);
 
-        // Set max health 
-        healthbar.SetMaxHealth(maxHealth);
-
-        // Set the health 
-        healthbar.SetHealth(health);
+        // Set the stamina 
+        staminaBar.SetMax(maxStamina);
+        staminaBar.Set(stamina);
 
     }
 
