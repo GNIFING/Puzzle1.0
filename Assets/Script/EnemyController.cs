@@ -104,7 +104,6 @@ public class EnemyController : MonoBehaviour
 
     private bool reachDestination() 
     {
-        Debug.Log(Vector3.Distance( enemy.destination, enemy.transform.position));
         if ( Vector3.Distance( enemy.destination, enemy.transform.position) <= 1) {
             return true;
         }

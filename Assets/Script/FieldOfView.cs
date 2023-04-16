@@ -77,7 +77,6 @@ public class FieldOfView : MonoBehaviour
                 // if raycast is not hitting the wall -> check wheter raycast can hit the player.
                 RaycastHit2D hitplayer = Physics2D.Raycast(origin, GetVectorFromAngle(angle), viewDistance, playerMask);
                 if(hitplayer.collider != null){
-                    Debug.Log("HITTTTTTTTTTT");
                     canSeePlayer = true;              
                 }
             } else {
