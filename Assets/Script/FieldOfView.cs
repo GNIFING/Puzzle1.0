@@ -104,7 +104,7 @@ public class FieldOfView : MonoBehaviour
         mesh.triangles = triangles;
         mesh.RecalculateBounds();
 
-        if(!canSeePlayer && (DateTime.Now - lastSeenPlayer).TotalSeconds < 5){
+        if(!canSeePlayer && (DateTime.Now - lastSeenPlayer).TotalSeconds < 3){
             enemyController.SetCanSeePlayer(true);
         } else if (canSeePlayer) {
             lastSeenPlayer = DateTime.Now;  
