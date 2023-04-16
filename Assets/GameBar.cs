@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class GameBar : MonoBehaviour
 {
 
     public Slider slider;
     public RectTransform fillArea;
-    public int healthScale = 10;
+    public int BarScale = 10;
 
-    public void SetMaxHealth(int health)
+    public void SetMax(int val)
     {
-        slider.maxValue = health;
-        fillArea.sizeDelta = new Vector2(healthScale*health, 125);
+        slider.maxValue = val;
+        fillArea.sizeDelta = new Vector2(BarScale*val, 125);
     }
 
 
-    public void SetHealth(int health) 
+    public void Set(int val) 
     {
-        slider.value = health;
+        slider.value = val;
     }
 
 
