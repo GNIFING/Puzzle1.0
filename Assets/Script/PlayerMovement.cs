@@ -3,6 +3,7 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // [SerializeField] private FieldOfView fieldOfView;
     public TextMeshProUGUI scoreText;
     public float speed = 5f; // The speed at which the player moves
     private Rigidbody2D rigidbody2d; // Reference to the player's Rigidbody2D component
@@ -43,6 +44,9 @@ public class PlayerMovement : MonoBehaviour
         // Set the stamina 
         staminaBar.SetMax(maxStamina);
         staminaBar.Set(stamina);
+
+        // fieldOfView.SetOrigin(transform.position);
+        // fieldOfView.SetAimDirection(movement.normalized);
 
     }
 

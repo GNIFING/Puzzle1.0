@@ -9,19 +9,33 @@ public class EnemyController : MonoBehaviour
     public float time;
     public Vector2 movement;
     
-    private Transform player;
+    private Transform lastSeenPosition;
     private UnityEngine.AI.NavMeshAgent enemy;
+
+    [SerializeField] private FieldOfView fieldOfView;
+    private bool canSeePlayer;
+
+    public Vector3 spotOne;
+    public Vector3 spotTwo;
+    private bool spotOneReached;
+    private bool spotTwoReached;
 
     // Start is called before the first frame update
     void Start()
     {
         // time = 0f;
 
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        // player = GameObject.FindGameObjectWithTag("Player").transform;
 
         enemy = GetComponent<UnityEngine.AI.NavMeshAgent>();
         enemy.updateRotation = false;
         enemy.updateUpAxis = false;
+
+        canSeePlayer = false;
+        spotOneReached = true;
+        spotTwoReached = false;
+
+        enemy.SetDestination(spotTwo);
     }
 
     // Update is called once per frame
@@ -42,7 +56,29 @@ public class EnemyController : MonoBehaviour
         // }
         // rigidbody2d.velocity = movement * speed;
 
-        enemy.SetDestination(player.position);
+        // enemy.SetDestination(player.position);
+        fieldOfView.SetOrigin(transform.position);
+        fieldOfView.SetAimDirection(enemy.desiredVelocity.normalized);
+
+        if(canSeePlayer){
+            enemy.speed = 3f;
+            enemy.SetDestination(lastSeenPosition.position);
+        } else {
+            enemy.speed = 1.5f;
+            if (spotOneReached) {
+                if (reachDestination()) {
+                    enemy.SetDestination(spotOne);
+                    spotTwoReached = true;
+                    spotOneReached = false;
+                }
+            } else if (spotTwoReached) {
+                if (reachDestination()) {
+                    enemy.SetDestination(spotTwo);
+                    spotOneReached = true;
+                    spotTwoReached = false;
+                }
+            }
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -50,5 +86,27 @@ public class EnemyController : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerMovement>().MinusScore();
         }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Physics2D.IgnoreCollision(collision.collider, collision.otherCollider);
+        }
+    }
+
+    public void SetCanSeePlayer(bool b)
+    {
+        this.canSeePlayer = b;
+    }
+
+    public void SetLastSeenPosition(Transform t)
+    {
+        this.lastSeenPosition = t;
+    }
+
+    private bool reachDestination() 
+    {
+        if ( Vector3.Distance( enemy.destination, enemy.transform.position) <= 1) {
+            return true;
+        }
+        return false;
     }
 }
