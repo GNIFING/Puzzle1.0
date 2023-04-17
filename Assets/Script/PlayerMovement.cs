@@ -26,6 +26,16 @@ public class PlayerMovement : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
     }
 
+    private void Start()
+    {
+        // Set the score and health
+        scoreBoard.SetScore(score);
+
+        // Set the stamina 
+        staminaBar.SetMax(maxStamina);
+        staminaBar.Set(stamina);
+    }
+
     private void Update()
     {
         // Get the horizontal and vertical axes input
@@ -42,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
         scoreBoard.SetScore(score);
 
         // Set the stamina 
-        staminaBar.SetMax(maxStamina);
         staminaBar.Set(stamina);
 
         // fieldOfView.SetOrigin(transform.position);
