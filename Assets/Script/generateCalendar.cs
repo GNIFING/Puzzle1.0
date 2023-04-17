@@ -46,7 +46,7 @@ public class generateCalendar : MonoBehaviour
             dayList.Add(day);
         }
         Debug.Log(dayList);
-        var season_text = calendarManager.seasons[calendarManager.season_index] + ", " + calendarManager.year.ToString();
+        var season_text = calendarManager.seasons[calendarManager.season_index] + ", year: " + calendarManager.year.ToString();
         Debug.Log(season_text);
         seasonTitle.GetComponent<TMPro.TextMeshProUGUI>().text = season_text;
     }
