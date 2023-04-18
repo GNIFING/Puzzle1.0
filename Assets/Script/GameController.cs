@@ -2,16 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour 
+public class GameController : MonoBehaviour
 {
-    private float stamina = 100f;
-    private int day = 1;
+    private float maxStamina = 100f;
+    private float stamina = 80f;
+    private int day = 0;
     private int moveSpeedLvl = 1;
     private int studyCourseLvl = 1;
-    private int money = 0;
+    private int money = 50;
+
+    public bool shoes1Buyed;
+    public bool shoes2;
+    public bool shoes3Equip;
+    public bool shoes4Equip;
+
+    public void NextDay()
+    {
+        day += 1;
+    }
 
     public void SaveGame()
     {
+        PlayerPrefs.SetFloat("maxStamina", maxStamina);
         PlayerPrefs.SetFloat("stamina", stamina);
         PlayerPrefs.SetInt("day", day);
         PlayerPrefs.SetInt("moveSpeedLvl", moveSpeedLvl);
@@ -22,6 +34,7 @@ public class GameController : MonoBehaviour
 
     public void LoadGame()
     {
+        maxStamina = PlayerPrefs.GetFloat("maxStamina", 100f);
         stamina = PlayerPrefs.GetFloat("stamina", 100f);
         day = PlayerPrefs.GetInt("day", 1);
         moveSpeedLvl = PlayerPrefs.GetInt("moveSpeedLvl", 1);
@@ -31,6 +44,7 @@ public class GameController : MonoBehaviour
 
     public void ResetGame()
     {
+        PlayerPrefs.SetFloat("maxStamina", 100f);
         PlayerPrefs.SetFloat("stamina", 100f);
         PlayerPrefs.SetInt("day", 1);
         PlayerPrefs.SetInt("moveSpeedLvl", 1);
@@ -39,6 +53,7 @@ public class GameController : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public float MaxStamina { get { return maxStamina; } set { maxStamina = value; } }
     public float Stamina { get { return stamina; } set { stamina = value; } }
     public int Day { get { return day; } set { day = value; } }
     public int MoveSpeedLvl { get { return moveSpeedLvl; } set { moveSpeedLvl = value; } }

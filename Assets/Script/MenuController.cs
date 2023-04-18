@@ -10,7 +10,7 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     private GameObject hospital;
     [SerializeField]
-    private GameObject bank;
+    private GameObject store;
     [SerializeField]
     private GameController gameController;
     
@@ -29,17 +29,19 @@ public class MenuController : MonoBehaviour
 
     public void EnterHome()
     {
+        home.GetComponent<HomeManager>().UpdateHome();
         home.SetActive(true);
     }
 
     public void EnterHospital()
     {
+        hospital.GetComponent<HospitalManager>().UpdateHospital();
         hospital.SetActive(true);
     }
 
-    public void EnterBank()
+    public void EnterStore()
     {
-        bank.SetActive(true);
+        store.SetActive(true);
     }
 
     public void ExitHome()
@@ -52,8 +54,8 @@ public class MenuController : MonoBehaviour
         hospital.SetActive(false);
     }
 
-    public void ExitBank()
+    public void ExitStore()
     {
-        bank.SetActive(false);
+        store.SetActive(false);
     }
 }
