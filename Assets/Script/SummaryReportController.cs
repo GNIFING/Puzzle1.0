@@ -8,8 +8,20 @@ public class SummaryReportController : MonoBehaviour
     // these static value can be change from any classes from any scene
     public static int junkCollected = 0;
     public static int staminaUsed = 0;
-    public static int junkLoss = 40;
+    public static int junkLoss = 0;
     public static int totalIncome = 0;
+    // private int minFontSize = 80;
+
+    void Start() {
+        LoadSummary();
+    }
+
+    private int getMin(float a, float b) {
+        if (a > b) {
+            return (int) b;
+        }
+        return (int) a;
+    }
 
     // change the display in report summary according to the parameters that we have
     public void LoadSummary() {
@@ -18,6 +30,18 @@ public class SummaryReportController : MonoBehaviour
         reportInfoDisplay.GetChild(1).GetChild(1).GetComponentInChildren<TMPro.TextMeshProUGUI>().text = staminaUsed.ToString();
         reportInfoDisplay.GetChild(2).GetChild(1).GetComponentInChildren<TMPro.TextMeshProUGUI>().text = junkLoss.ToString();
         reportInfoDisplay.GetChild(3).GetChild(1).GetComponentInChildren<TMPro.TextMeshProUGUI>().text = totalIncome.ToString();
+
+        // // setFontSize currently set as unused 
+        // minFontSize =   getMin(reportInfoDisplay.GetChild(0).GetChild(0).GetComponentInChildren<TMPro.TextMeshProUGUI>().fontSize, 
+        //                 getMin(reportInfoDisplay.GetChild(1).GetChild(0).GetComponentInChildren<TMPro.TextMeshProUGUI>().fontSize, 
+        //                 getMin(reportInfoDisplay.GetChild(2).GetChild(0).GetComponentInChildren<TMPro.TextMeshProUGUI>().fontSize,
+        //                          reportInfoDisplay.GetChild(3).GetChild(0).GetComponentInChildren<TMPro.TextMeshProUGUI>().fontSize)));
+
+        // reportInfoDisplay.GetChild(0).GetChild(0).GetComponentInChildren<TMPro.TextMeshProUGUI>().fontSize = minFontSize;
+        // reportInfoDisplay.GetChild(1).GetChild(0).GetComponentInChildren<TMPro.TextMeshProUGUI>().fontSize = minFontSize;
+        // reportInfoDisplay.GetChild(2).GetChild(0).GetComponentInChildren<TMPro.TextMeshProUGUI>().fontSize = minFontSize;
+        // reportInfoDisplay.GetChild(3).GetChild(0).GetComponentInChildren<TMPro.TextMeshProUGUI>().fontSize = minFontSize;
+        // Debug.Log(minFontSize);
     } 
 
     // call this function to reset parameters as we can see in the bracket
