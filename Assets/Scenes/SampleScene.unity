@@ -41443,5 +41443,9 @@ PrefabInstance:
       propertyPath: m_Value
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 8436568008282403785, guid: 6d7bfaa478c19e645aa39998ff5bcf56, type: 3}
+      propertyPath: BarScale
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d7bfaa478c19e645aa39998ff5bcf56, type: 3}

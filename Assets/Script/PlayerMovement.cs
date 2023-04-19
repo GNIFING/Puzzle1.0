@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,8 +11,8 @@ public class PlayerMovement : MonoBehaviour
     
     // Score and stamina
     public int score = 0;
-    public int maxStamina = 100;
-    public int stamina = 100;
+    public float maxStamina = 100;
+    public float stamina = 100;
     // For set and update UI
     public GameBar staminaBar;
     public inGameScoreBoard scoreBoard;
@@ -32,8 +33,11 @@ public class PlayerMovement : MonoBehaviour
         scoreBoard.SetScore(score);
 
         // Set the stamina 
-        staminaBar.SetMax(maxStamina);
-        staminaBar.Set(stamina);
+        staminaBar.SetMax(Mathf.RoundToInt(maxStamina));
+        staminaBar.Set(Mathf.RoundToInt(stamina));
+
+        // Start Drain Stamina
+        StartCoroutine("StaminaDrain");
     }
 
     private void Update()
@@ -51,12 +55,29 @@ public class PlayerMovement : MonoBehaviour
         // Set the score and health
         scoreBoard.SetScore(score);
 
-        // Set the stamina 
-        staminaBar.Set(stamina);
-
         // fieldOfView.SetOrigin(transform.position);
         // fieldOfView.SetAimDirection(movement.normalized);
+    }
 
+    IEnumerator StaminaDrain()
+    {
+        while (true)
+        {
+            if (stamina < maxStamina && stamina > 0)
+            {
+                stamina -= 1.1f;
+            }
+            // if player move
+            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            {
+                if (stamina > 2)
+                {
+                    stamina -= 0.5f;
+                }
+            }
+            staminaBar.Set(Mathf.RoundToInt(stamina));
+            yield return new WaitForSeconds(1f);
+        }
     }
 
     public void AddScore()
