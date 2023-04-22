@@ -22,9 +22,14 @@ namespace DialogueSystem
 
         private void Awake() {
             textHolder = GetComponent<TextMeshProUGUI>();
-
+            textHolder.text = "";
+        }
+        
+        private void Start() {
             StartCoroutine(WriteText(input, textHolder, color, font, delay, sound));
         }
     }
+
+    
 }
 
