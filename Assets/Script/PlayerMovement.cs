@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     // For set and update UI
     public GameBar staminaBar;
     public inGameScoreBoard scoreBoard;
+    public Vector3 entryFromPrevScene;
+    public Vector3 entryFromNextScene;
 
     // // Set magnet speed and radius
     // public float magnetSpeed = 5f;
@@ -25,16 +28,41 @@ public class PlayerMovement : MonoBehaviour
     {
         // Get reference to the Rigidbody2D component
         rigidbody2d = GetComponent<Rigidbody2D>();
+        if(PlayerPrefs.HasKey("inGameLastLevel")){
+            int lastLevelIndex = PlayerPrefs.GetInt("inGameLastLevel");
+            int thisLevelIndex = SceneManager.GetActiveScene().buildIndex;
+            if (lastLevelIndex - thisLevelIndex == -1){
+                transform.position = entryFromPrevScene;
+            } else {
+                transform.position = entryFromNextScene;
+            }
+        } else {
+            transform.position = entryFromPrevScene;
+        }
     }
 
     private void Start()
     {
-        // Set the score and health
-        scoreBoard.SetScore(score);
+        // Set the score
+        if(PlayerPrefs.HasKey("inGameScore"))
+        {
+            int inGameScore = PlayerPrefs.GetInt("inGameScore");
+            this.score = inGameScore;
+            scoreBoard.SetScore(inGameScore);
+        } else {
+            scoreBoard.SetScore(score);
+        }
 
         // Set the stamina 
         staminaBar.SetMax(Mathf.RoundToInt(maxStamina));
-        staminaBar.Set(Mathf.RoundToInt(stamina));
+        if(PlayerPrefs.HasKey("inGameStamina"))
+        {
+            float inGameStamina = PlayerPrefs.GetFloat("inGameStamina");
+            this.stamina = inGameStamina;
+            staminaBar.Set(Mathf.RoundToInt(inGameStamina));
+        } else {
+            staminaBar.Set(Mathf.RoundToInt(stamina));
+        }
 
         // Start Drain Stamina
         StartCoroutine("StaminaDrain");
@@ -90,5 +118,15 @@ public class PlayerMovement : MonoBehaviour
     {
         score -= 1;
         scoreText.text = "score :" + score.ToString();
+    }
+
+    public float getStamina() 
+    {
+        return this.stamina;
+    }
+
+    public int getScore()
+    {
+        return this.score;
     }
 }

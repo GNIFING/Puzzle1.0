@@ -165,8 +165,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.843, y: 1.3508}
-  m_SizeDelta: {x: 1805.7, y: 971.54}
+  m_AnchoredPosition: {x: 0.0276, y: 1.3504}
+  m_SizeDelta: {x: 752.3682, y: 400.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &23205890
 MonoBehaviour:
@@ -528,7 +528,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -562.69995, y: -25.73999}
+  m_AnchoredPosition: {x: -255.4, y: -73.340034}
   m_SizeDelta: {x: 405.2743, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &166007157
@@ -578,8 +578,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 23.8
+  m_fontSizeBase: 23.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -691,7 +691,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1891900382}
         m_TargetAssemblyTypeName: HomeManager, Assembly-CSharp
         m_MethodName: PayBill
         m_Mode: 1
@@ -3495,7 +3495,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.7000122, y: -25.73999}
+  m_AnchoredPosition: {x: -0.7000122, y: -73.340034}
   m_SizeDelta: {x: 405.2743, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1065362659
@@ -3545,8 +3545,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 23.8
+  m_fontSizeBase: 23.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4907,8 +4907,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 566.2999, y: 3.5}
-  m_SizeDelta: {x: 400.1063, y: 125}
+  m_AnchoredPosition: {x: 219.7, y: 0.000011444}
+  m_SizeDelta: {x: 267.2938, y: 95.2659}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1532685646
 MonoBehaviour:
@@ -4954,7 +4954,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 23205892}
         m_TargetAssemblyTypeName: HospitalManager, Assembly-CSharp
         m_MethodName: Heal
         m_Mode: 1
@@ -5521,8 +5521,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 853, y: 435}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 346.7, y: 171}
+  m_SizeDelta: {x: 115.5056, y: 115.5056}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1593613695
 MonoBehaviour:
@@ -5653,8 +5653,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 876.3182, y: -512.21}
-  m_SizeDelta: {x: 167.3606, y: 55.577}
+  m_AnchoredPosition: {x: 364.27026, y: -214.1377}
+  m_SizeDelta: {x: 69.9401, y: 21.7216}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1595611970
 MonoBehaviour:
@@ -5703,8 +5703,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 23.8
+  m_fontSizeBase: 23.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5864,7 +5864,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -562.69995, y: 88.50003}
+  m_AnchoredPosition: {x: -255.4, y: 40.9}
   m_SizeDelta: {x: 405.2743, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1625623214
@@ -5914,8 +5914,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 23.8
+  m_fontSizeBase: 23.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6679,7 +6679,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.7000122, y: 88.50003}
+  m_AnchoredPosition: {x: -0.7000122, y: 40.899986}
   m_SizeDelta: {x: 278.85, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1826204408
@@ -6729,8 +6729,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 23.8
+  m_fontSizeBase: 23.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7798,8 +7798,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 23.8
+  m_fontSizeBase: 23.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
