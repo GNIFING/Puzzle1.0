@@ -20,9 +20,15 @@ namespace DialogueSystem
         [Header ("Sound")]
         [SerializeField] private AudioClip sound;
 
+        [Header ("Character Image")]
+        [SerializeField] private Sprite characterSprite;
+        [SerializeField] private Image imageHolder;
+
         private void Awake() {
             textHolder = GetComponent<TextMeshProUGUI>();
             textHolder.text = "";
+
+            imageHolder.sprite = characterSprite;
         }
         
         private void Start() {
