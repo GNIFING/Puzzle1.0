@@ -34,7 +34,6 @@ public class TrashManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("still workingggg");
         // Trash trash = gameObject.GetComponentInChildren<Trash>(true);
         string activeLevel = SceneManager.GetActiveScene().name;
         if(spawnedLevel == activeLevel){
