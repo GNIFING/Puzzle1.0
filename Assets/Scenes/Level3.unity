@@ -317,6 +317,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8750516981241772989, guid: a39407e22c6f54ca2ab5b011e2d92fee, type: 3}
+      propertyPath: entryFromNextScene.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750516981241772989, guid: a39407e22c6f54ca2ab5b011e2d92fee, type: 3}
+      propertyPath: entryFromNextScene.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750516981241772989, guid: a39407e22c6f54ca2ab5b011e2d92fee, type: 3}
+      propertyPath: entryFromPrevScene.x
+      value: -5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750516981241772989, guid: a39407e22c6f54ca2ab5b011e2d92fee, type: 3}
+      propertyPath: entryFromPrevScene.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8750516983095716228, guid: a39407e22c6f54ca2ab5b011e2d92fee, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
