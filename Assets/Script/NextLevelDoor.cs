@@ -25,10 +25,18 @@ public class NextLevelDoor : MonoBehaviour
             PlayerPrefs.DeleteKey("inGameStamina");
             PlayerPrefs.DeleteKey("inGameScore");
             PlayerPrefs.DeleteKey("inGameLastLevel");
+            PlayerPrefs.DeleteKey("Level1_isVisited");
+            PlayerPrefs.DeleteKey("Level2_isVisited");
+            PlayerPrefs.DeleteKey("Level3_isVisited");
         } else {
             PlayerPrefs.SetFloat("inGameStamina", stamina);
             PlayerPrefs.SetInt("inGameScore", score);
-            PlayerPrefs.SetInt("inGameLastLevel", SceneManager.GetActiveScene().buildIndex );
+
+            Scene thisScene = SceneManager.GetActiveScene();
+            int thisSceneIndex = thisScene.buildIndex;
+            string thisSceneName = thisScene.name;
+            PlayerPrefs.SetInt("inGameLastLevel", thisSceneIndex);
+            PlayerPrefs.SetInt(thisSceneName + "_isVisited", 1);
         }
 
         transition.SetTrigger("FadeStart");
