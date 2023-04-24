@@ -20,6 +20,10 @@ public class EnemyController : MonoBehaviour
     private bool spotOneReached;
     private bool spotTwoReached;
 
+    // Animation
+    public Animator animator;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,6 +83,19 @@ public class EnemyController : MonoBehaviour
                 }
             }
         }
+
+        // update animation
+        Vector3 movementVector = enemy.velocity.normalized;
+
+        animator.SetBool("walkUp", movementVector.y > 0.01 && movementVector.y > Mathf.Abs(movementVector.x) );
+        animator.SetBool("walkDown", movementVector.y < -0.01 && Mathf.Abs(movementVector.y) > Mathf.Abs(movementVector.x));
+        animator.SetBool("walkLeft", movementVector.x < -0.3 && !animator.GetBool("walkUp") && !animator.GetBool("walkDown"));
+        animator.SetBool("walkRight", movementVector.x > 0.3 && !animator.GetBool("walkUp") && !animator.GetBool("walkDown"));
+
+        
+
+
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
