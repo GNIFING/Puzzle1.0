@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SummaryReportController : MonoBehaviour
 {
@@ -12,15 +13,10 @@ public class SummaryReportController : MonoBehaviour
     public static int totalIncome = 0;
     // private int minFontSize = 80;
 
-    void Start() {
+    void OnEnable()
+    {
         LoadSummary();
-    }
-
-    private int getMin(float a, float b) {
-        if (a > b) {
-            return (int) b;
-        }
-        return (int) a;
+        Debug.Log("LoadSummary is called");
     }
 
     // change the display in report summary according to the parameters that we have
@@ -30,18 +26,6 @@ public class SummaryReportController : MonoBehaviour
         reportInfoDisplay.GetChild(1).GetChild(1).GetComponentInChildren<TMPro.TextMeshProUGUI>().text = staminaUsed.ToString();
         reportInfoDisplay.GetChild(2).GetChild(1).GetComponentInChildren<TMPro.TextMeshProUGUI>().text = junkLoss.ToString();
         reportInfoDisplay.GetChild(3).GetChild(1).GetComponentInChildren<TMPro.TextMeshProUGUI>().text = totalIncome.ToString();
-
-        // // setFontSize currently set as unused 
-        // minFontSize =   getMin(reportInfoDisplay.GetChild(0).GetChild(0).GetComponentInChildren<TMPro.TextMeshProUGUI>().fontSize, 
-        //                 getMin(reportInfoDisplay.GetChild(1).GetChild(0).GetComponentInChildren<TMPro.TextMeshProUGUI>().fontSize, 
-        //                 getMin(reportInfoDisplay.GetChild(2).GetChild(0).GetComponentInChildren<TMPro.TextMeshProUGUI>().fontSize,
-        //                          reportInfoDisplay.GetChild(3).GetChild(0).GetComponentInChildren<TMPro.TextMeshProUGUI>().fontSize)));
-
-        // reportInfoDisplay.GetChild(0).GetChild(0).GetComponentInChildren<TMPro.TextMeshProUGUI>().fontSize = minFontSize;
-        // reportInfoDisplay.GetChild(1).GetChild(0).GetComponentInChildren<TMPro.TextMeshProUGUI>().fontSize = minFontSize;
-        // reportInfoDisplay.GetChild(2).GetChild(0).GetComponentInChildren<TMPro.TextMeshProUGUI>().fontSize = minFontSize;
-        // reportInfoDisplay.GetChild(3).GetChild(0).GetComponentInChildren<TMPro.TextMeshProUGUI>().fontSize = minFontSize;
-        // Debug.Log(minFontSize);
     } 
 
     // call this function to reset parameters as we can see in the bracket
@@ -53,10 +37,15 @@ public class SummaryReportController : MonoBehaviour
     }
 
     // if developer doesn't want to assign each params, u can call this function instead (but why?)
-    public void assignVariable(int junkCol, int stamUsed, int junkL, int income) {
+    public void AssignVariable(int junkCol, int stamUsed, int junkL, int income) {
         junkCollected = junkCol;
         staminaUsed = stamUsed;
         junkLoss = junkL;
         totalIncome = income;
+    }
+
+    public void LoadMainMenu() {
+        Debug.Log("This is Mainmenu");
+        SceneManager.LoadScene("MainGame");
     }
 }

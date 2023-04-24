@@ -60,4 +60,10 @@ public class MenuController : MonoBehaviour
     {
         store.SetActive(false);
     }
+
+    public void Summary()
+    {
+        Debug.Log("Summary!");
+        SceneManager.LoadScene("Summary");
+    }
 }
