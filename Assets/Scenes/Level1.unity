@@ -4718,7 +4718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2344449248875028431, guid: 8474d2416b87241d1a211f6121299f23, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 2344449248875028431, guid: 8474d2416b87241d1a211f6121299f23, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5280,6 +5280,10 @@ PrefabInstance:
     - target: {fileID: 7215668658300937306, guid: 44391edcb039f42dbaab380d87e452f1, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215668658300937308, guid: 44391edcb039f42dbaab380d87e452f1, type: 3}
+      propertyPath: m_Mass
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7215668658300937309, guid: 44391edcb039f42dbaab380d87e452f1, type: 3}
       propertyPath: spotOne.x

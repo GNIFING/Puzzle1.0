@@ -28,6 +28,13 @@ public class NextLevelDoor : MonoBehaviour
             PlayerPrefs.DeleteKey("Level1_isVisited");
             PlayerPrefs.DeleteKey("Level2_isVisited");
             PlayerPrefs.DeleteKey("Level3_isVisited");
+
+            GameObject[] allTrashes = GameObject.FindGameObjectsWithTag("Trash");
+            foreach (GameObject trashManager in allTrashes)
+            {
+                Destroy(trashManager);
+            }
+
         } else {
             PlayerPrefs.SetFloat("inGameStamina", stamina);
             PlayerPrefs.SetInt("inGameScore", score);
