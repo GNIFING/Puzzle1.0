@@ -4364,7 +4364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d0452d4b17646e38a8cf2e27af9a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: MainGame
+  sceneToLoad: Summary
   transition: {fileID: 48516056}
   transitionTime: 0
 --- !u!114 &1416730404
@@ -5200,6 +5200,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8750516981241772989, guid: a39407e22c6f54ca2ab5b011e2d92fee, type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 48516056}
     - target: {fileID: 8750516981241772989, guid: a39407e22c6f54ca2ab5b011e2d92fee, type: 3}
       propertyPath: entryFromNextScene.x
       value: 14.5

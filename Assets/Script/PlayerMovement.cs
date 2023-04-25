@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public int score = 0;
     public float maxStamina = 100;
     public float stamina = 100;
+    public int junkLossed = 0;
+
     // For set and update UI
     public GameBar staminaBar;
     public inGameScoreBoard scoreBoard;
@@ -43,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     Color color;  
     private SpriteRenderer sr;
 
+    public float transitionTime = 1f;
 
     private void Awake()
     {
@@ -71,6 +75,13 @@ public class PlayerMovement : MonoBehaviour
             scoreBoard.SetScore(inGameScore);
         } else {
             scoreBoard.SetScore(score);
+        }
+
+        // Set junk lossed record
+        if(PlayerPrefs.HasKey("inGameJunkLossed"))
+        {
+            int inGameJunkLossed = PlayerPrefs.GetInt("inGameJunkLossed");
+            this.junkLossed = inGameJunkLossed;
         }
 
         // Set the stamina 
@@ -113,11 +124,13 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("walkLeft", movement.x < -0.01 && !animator.GetBool("walkUp") && !animator.GetBool("walkDown"));
         animator.SetBool("walkRight", movement.x > 0.01 && !animator.GetBool("walkUp") && !animator.GetBool("walkDown"));
 
-        print("up:"+animator.GetBool("walkUp")+" down:"+animator.GetBool("walkDown")+" left:"+animator.GetBool("walkLeft")+" right:"+animator.GetBool("walkRight"));
-        
+        // print("up:"+animator.GetBool("walkUp")+" down:"+animator.GetBool("walkDown")+" left:"+animator.GetBool("walkLeft")+" right:"+animator.GetBool("walkRight"));
         
         // Set the score and health
         scoreBoard.SetScore(score);
+
+        // Check if player run out of stamina
+        checkOutOfStamina();
     }
 
     IEnumerator StaminaDrain()
@@ -149,8 +162,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void MinusScore()
     {
-        score -= 1;
-        scoreText.text = "score :" + score.ToString();
+        if(this.score > 0){
+            score -= 1;
+            scoreText.text = "score :" + score.ToString();
+            junkLossed += 1;
+        }
     }
 
     public float getStamina() 
@@ -158,9 +174,19 @@ public class PlayerMovement : MonoBehaviour
         return this.stamina;
     }
 
+    public int getUsedStamina()
+    {
+        return (int) Math.Round(this.maxStamina - this.stamina);
+    }
+
     public int getScore()
     {
         return this.score;
+    }
+
+    public int getJunkLossed()
+    {
+        return this.junkLossed;
     }
 
     public bool getIsInvincible()
@@ -211,5 +237,29 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         this.knockBackDirection = Vector2.zero;
+    }
+
+    public void checkOutOfStamina() {
+        // while(this.stamina > 0);
+        if(this.stamina <= 0){
+            Debug.Log("HEYYY");
+            PlayerPrefs.DeleteKey("inGameStamina");
+            PlayerPrefs.DeleteKey("inGameScore");
+            PlayerPrefs.DeleteKey("inGameJunkLossed");
+            PlayerPrefs.DeleteKey("inGameLastLevel");
+            PlayerPrefs.DeleteKey("Level1_isVisited");
+            PlayerPrefs.DeleteKey("Level2_isVisited");
+            PlayerPrefs.DeleteKey("Level3_isVisited");
+
+            GameObject[] allTrashes = GameObject.FindGameObjectsWithTag("Trash");
+            foreach (GameObject trashManager in allTrashes)
+            {
+                Destroy(trashManager);
+            }
+
+            SummaryReportController.AssignVariable(this.score, (int) Math.Round(this.maxStamina), this.junkLossed, (int) Math.Round((score*1)*0.5));
+
+            SceneManager.LoadScene("Summary");
+        }
     }
 }
