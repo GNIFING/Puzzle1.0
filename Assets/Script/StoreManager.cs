@@ -37,33 +37,6 @@ public class StoreManager : MonoBehaviour
             buyButton[2].SetActive(false);
             EquipShoes(3);
         }
-        else
-        {
-            // Default case
-        }
-
-    }
-
-    public void BuyStaminaBuff(int staminaNumber)
-    {
-        if(staminaNumber == 1)
-        {
-            gameController.staminaBuff1Buyed = true;
-        }
-        else if(staminaNumber == 2)
-        {
-            gameController.staminaBuff2Buyed = true;
-        }
-    }
-
-    public void BuyMagnet()
-    {
-        
-    }
-
-    public void BuyStudyCourse(int studyCourseNumber)
-    {
-
     }
 
     public void EquipShoes(int shoesNumber)
@@ -99,4 +72,66 @@ public class StoreManager : MonoBehaviour
         gameController.shoesEquip = 0;
         equipButton[shoesNumber - 1].SetActive(true);
     }
+
+    public void BuyMagnet()
+    {
+        if(gameController.Money >= 50)
+        {
+            gameController.Money -= 50;
+            moneyText.text = gameController.Money.ToString();
+            gameController.magnetBuyed = true;
+            buyButton[3].SetActive(false);
+        }
+    }
+
+    public void EquipMagnet(int equip)
+    {
+        //equip = 1, unequip = 0; 
+        if(equip == 0)
+        {
+            gameController.magnetEquip = 1;
+            equipButton[3].SetActive(true);
+        }
+        if (equip == 1)
+        {
+            gameController.magnetEquip = 0;
+            equipButton[3].SetActive(false);
+        }
+    }
+
+    public void BuyStaminaBuff(int staminaNumber)
+    {
+        if (staminaNumber == 1 && gameController.Money >= 25)
+        {
+            gameController.Money -= 25;
+            buyButton[4].SetActive(false);
+            gameController.staminaBuff1Buyed = true;
+        }
+        else if (staminaNumber == 2 && gameController.Money >= 50)
+        {
+            gameController.Money -= 50;
+            buyButton[5].SetActive(false);
+            gameController.staminaBuff2Buyed = true;
+        }
+        moneyText.text = gameController.Money.ToString();
+    }
+
+    public void BuyStudyCourse(int studyCourseNumber)
+    {
+        if (studyCourseNumber == 1 && gameController.Money >= 50)
+        {
+            gameController.Money -= 50;
+            buyButton[6].SetActive(false);
+            gameController.studyCourse1Buyed = true;
+        }
+        else if (studyCourseNumber == 2 && gameController.Money >= 100)
+        {
+            gameController.Money -= 100;
+            buyButton[7].SetActive(false);
+            gameController.studyCourse2Buyed = true;
+        }
+        moneyText.text = gameController.Money.ToString();
+    }
+
+
 }
