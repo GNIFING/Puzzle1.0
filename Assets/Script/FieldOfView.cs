@@ -12,7 +12,7 @@ public class FieldOfView : MonoBehaviour
     private Mesh mesh;
     public Vector3 origin;
     private float startingAngle;
-    private float fov;
+    public float fov = 90f;
     public EnemyController enemyController;
     private DateTime lastSeenPlayer;
 
@@ -38,7 +38,6 @@ public class FieldOfView : MonoBehaviour
         GetComponent<MeshFilter>().mesh = mesh;
 
         origin = Vector3.zero;
-        fov = 90f;
 
         Vector3 pos = Vector3.zero;
         pos.z = -0.01f;
@@ -52,7 +51,6 @@ public class FieldOfView : MonoBehaviour
         pos.z = -0.01f;
         transform.position = pos;
 
-        float fov = 90f;
         int rayCount = 50;
         float angle = startingAngle;
         float angleIncrease = fov/rayCount;

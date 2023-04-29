@@ -169,6 +169,7 @@ MonoBehaviour:
   score: 0
   maxStamina: 100
   stamina: 100
+  junkLossed: 0
   staminaBar: {fileID: 8750516982740768666}
   scoreBoard: {fileID: 8750516983162758287}
   entryFromPrevScene: {x: 0, y: 0, z: 0}
@@ -176,6 +177,7 @@ MonoBehaviour:
   invincibleCoolDown: 2
   minimum: 0.3
   maximum: 1
+  transitionTime: 1
 --- !u!70 &8750516981241772096
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
