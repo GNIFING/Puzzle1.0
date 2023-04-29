@@ -242,7 +242,6 @@ public class PlayerMovement : MonoBehaviour
     public void checkOutOfStamina() {
         // while(this.stamina > 0);
         if(this.stamina <= 0){
-            Debug.Log("HEYYY");
             PlayerPrefs.DeleteKey("inGameStamina");
             PlayerPrefs.DeleteKey("inGameScore");
             PlayerPrefs.DeleteKey("inGameJunkLossed");

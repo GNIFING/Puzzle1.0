@@ -9,11 +9,12 @@ public class EnemyController : MonoBehaviour
     public float time;
     public Vector2 movement;
     
-    private Transform lastSeenPosition;
+    protected Transform lastSeenPosition;
     private UnityEngine.AI.NavMeshAgent enemy;
 
     [SerializeField] private FieldOfView fieldOfView;
-    private bool canSeePlayer;
+    protected bool canSeePlayer;
+    private bool isAlerted;
 
     public Vector3 spotOne;
     public Vector3 spotTwo;
@@ -36,6 +37,7 @@ public class EnemyController : MonoBehaviour
         enemy.updateUpAxis = false;
 
         canSeePlayer = false;
+        isAlerted = false;
         spotOneReached = true;
         spotTwoReached = false;
 
@@ -45,26 +47,10 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        // time += Time.deltaTime;
-        // if(time >= 3f)
-        // {
-        //     int horizontal = Random.Range(-1, 2); 
-        //     int vertical = Random.Range(-1, 2);
-        //     while (horizontal == 0 && vertical == 0)
-        //     { 
-        //         horizontal = Random.Range(-1, 2); 
-        //         vertical = Random.Range(-1, 2);
-        //     }
-        //     movement = new Vector2(horizontal, vertical);
-        //     time = 0f;
-        // }
-        // rigidbody2d.velocity = movement * speed;
-
         // enemy.SetDestination(player.position);
         fieldOfView.SetOrigin(transform.position);
         fieldOfView.SetAimDirection(enemy.desiredVelocity.normalized);
-
-        if(canSeePlayer){
+        if(canSeePlayer || isAlerted){
             enemy.speed = 3f;
             enemy.SetDestination(lastSeenPosition.position);
         } else {
@@ -121,7 +107,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void SetCanSeePlayer(bool b)
+    public virtual void SetCanSeePlayer(bool b)
     {
         this.canSeePlayer = b;
     }
@@ -137,5 +123,11 @@ public class EnemyController : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void alert(bool alert, Transform t)
+    {
+        this.isAlerted = alert;
+        this.lastSeenPosition = t;
     }
 }
