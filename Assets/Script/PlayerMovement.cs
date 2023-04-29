@@ -160,12 +160,16 @@ public class PlayerMovement : MonoBehaviour
         scoreText.text = "score :" + score.ToString();
     }
 
-    public void MinusScore()
+    public void MinusScore(int damage)
     {
-        if(this.score > 0){
-            score -= 1;
+        if(this.score - damage  >= 0){
+            score -= damage;
             scoreText.text = "score :" + score.ToString();
-            junkLossed += 1;
+            junkLossed += damage;
+        } else {
+            junkLossed += score;
+            score = 0;
+            scoreText.text = "score :" + score.ToString();
         }
     }
 

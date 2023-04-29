@@ -8,6 +8,9 @@ public class EnemyController : MonoBehaviour
     public Rigidbody2D rigidbody2d; // Reference to the player's Rigidbody2D component
     public float time;
     public Vector2 movement;
+
+    // specify how many points will be deducted from the player if this enemy hit the player
+    public int damage = 1;
     
     protected Transform lastSeenPosition;
     private UnityEngine.AI.NavMeshAgent enemy;
@@ -95,7 +98,7 @@ public class EnemyController : MonoBehaviour
 
             bool isInvincible = collision.gameObject.GetComponent<PlayerMovement>().getIsInvincible();
             if(!isInvincible){
-                collision.gameObject.GetComponent<PlayerMovement>().MinusScore();
+                collision.gameObject.GetComponent<PlayerMovement>().MinusScore(damage);
                 collision.gameObject.GetComponent<PlayerMovement>().setInvincible();
             } else {
                 Physics2D.IgnoreCollision(collision.collider, collision.otherCollider, false);
@@ -125,9 +128,8 @@ public class EnemyController : MonoBehaviour
         return false;
     }
 
-    public void alert(bool alert, Transform t)
+    public void setIsAlert(bool alert)
     {
         this.isAlerted = alert;
-        this.lastSeenPosition = t;
     }
 }

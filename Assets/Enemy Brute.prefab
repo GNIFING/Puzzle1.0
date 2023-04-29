@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7215668658300937308}
   - component: {fileID: 7215668658300937296}
   - component: {fileID: 9133727068577419495}
-  - component: {fileID: 4637427086404466017}
+  - component: {fileID: 4154635396377342088}
   m_Layer: 0
-  m_Name: Enemy Alerter
+  m_Name: Enemy Brute
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 21ae12909dfa64464820da55fc494021, type: 3}
-  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_Color: {r: 0.0014239977, g: 0.3018868, b: 0.12569991, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -169,7 +169,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4637427086404466017
+--- !u!114 &4154635396377342088
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,14 +178,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7215668658300937306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6552afbf8d1884782be84e5343f96c91, type: 3}
+  m_Script: {fileID: 11500000, guid: a4d1f47265f3e437f9d7eb253a02b189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
   rigidbody2d: {fileID: 0}
   time: 0
   movement: {x: 0, y: 0}
-  damage: 1
+  damage: 5
   fieldOfView: {fileID: 7215668659113368895}
   spotOne: {x: 0, y: 0, z: 0}
   spotTwo: {x: 0, y: 0, z: 0}
@@ -252,9 +252,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   origin: {x: 13.519644, y: -19.404154, z: -0.53333014}
-  fov: 30
-  viewDistance: 6
-  enemyController: {fileID: 4637427086404466017}
+  fov: 150
+  viewDistance: 2.5
+  enemyController: {fileID: 4154635396377342088}
 --- !u!137 &7215668659113368894
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
