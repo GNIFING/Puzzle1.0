@@ -45,6 +45,8 @@ public class SummaryReportController : MonoBehaviour
     }
 
     public void LoadMainMenu() {
+        int previousMoney = PlayerPrefs.GetInt("money", 0);
+        PlayerPrefs.SetInt("money", previousMoney + totalIncome);
         Debug.Log("This is Mainmenu");
         SceneManager.LoadScene("MainGame");
     }

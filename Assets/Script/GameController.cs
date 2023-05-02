@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     private int day = 0;
     private int moveSpeedLvl = 1;
     private int studyCourseLvl = 1;
-    private int money = 100;
+    private int money = 0;
 
     public bool shoes1Buyed;
     public bool shoes2Buyed;
@@ -25,9 +25,20 @@ public class GameController : MonoBehaviour
     public bool magnetBuyed;
     public int magnetEquip;
 
+    public void Start()
+    {
+        //ResetGame();
+        LoadGame();    
+    }
+
     public void NextDay()
     {
-        day += 1;
+        if(day != 9)
+        {
+            day += 1;
+            PlayerPrefs.SetInt("day", day);
+        }
+        SaveGame();
     }
 
     public void SaveGame()
