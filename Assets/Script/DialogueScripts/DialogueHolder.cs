@@ -6,9 +6,20 @@ namespace DialogueSystem
 {
     public class DialogueHolder : MonoBehaviour
     {
-        private void Awake()
+        private IEnumerator dialogueSeq;
+
+        private void OnEnable()
         {
-            StartCoroutine(dialogueSequence());
+            dialogueSeq = dialogueSequence();
+            StartCoroutine(dialogueSeq);
+        }
+
+        private void Update() {
+            if (Input.GetKey(KeyCode.Escape)) {
+                Deactive();
+                gameObject.SetActive(false);
+                StopCoroutine(dialogueSeq);
+            }
         }
 
         private IEnumerator dialogueSequence() 
@@ -28,6 +39,8 @@ namespace DialogueSystem
                 transform.GetChild(i).gameObject.SetActive(false);
             }
         }
+
+        
     }
 }
 
