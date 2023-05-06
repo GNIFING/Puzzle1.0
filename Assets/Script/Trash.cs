@@ -13,10 +13,11 @@ public class Trash : MonoBehaviour
     float speed = 5f;
 
     // lazy moveable trash
-    private float rotationSpeed = 100f;
-    private float amplitude = 0.5f; // adjust this value to control the height of the sine wave
-    private float frequency = 2f; // adjust this value to control the frequency of the sine wave
+    private float flipSpeed = 100f; // adjust this value to control the speed of the flip
+    private float amplitude = 0.005f; // adjust this value to control the height of the coin's movement
+    private float frequency = 2f; // adjust this value to control the frequency of the coin's movement
     private float elapsedTime = 0f;
+
 
     private Trash trashInstance;
     private string spawnedLevel;
@@ -66,13 +67,17 @@ public class Trash : MonoBehaviour
             rb.velocity = new Vector2(direction.x , direction.y) * speed;
         }
 
-        // Rotate the trash
-        transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+        // calculate the y-position based on a sine wave
+        float yPos = Mathf.Sin(elapsedTime * frequency) * amplitude;
 
+        // calculate the flip angle based on the elapsed time and flip speed
+        float flipAngle = elapsedTime * flipSpeed;
 
-        // Move the trash up and down
+        // apply the flip and position changes to the coin transform
+        transform.rotation = Quaternion.Euler(0f, flipAngle, 0f);
+        transform.position = transform.position + new Vector3(0f, yPos, 0f);
+
         elapsedTime += Time.deltaTime;
-        transform.position = new Vector3(transform.position.x, transform.position.y + Mathf.Sin(elapsedTime * frequency) * amplitude, transform.position.z);
     }
 
     public void SetTarget(Vector3 target)
