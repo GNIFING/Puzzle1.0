@@ -12,6 +12,12 @@ public class Trash : MonoBehaviour
     Vector3 targetPosition;
     float speed = 5f;
 
+    // lazy moveable trash
+    private float rotationSpeed = 100f;
+    private float amplitude = 0.5f; // adjust this value to control the height of the sine wave
+    private float frequency = 2f; // adjust this value to control the frequency of the sine wave
+    private float elapsedTime = 0f;
+
     private Trash trashInstance;
     private string spawnedLevel;
 
@@ -59,6 +65,14 @@ public class Trash : MonoBehaviour
             Vector2 direction = (targetPosition - transform.position).normalized;
             rb.velocity = new Vector2(direction.x , direction.y) * speed;
         }
+
+        // Rotate the trash
+        transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+
+
+        // Move the trash up and down
+        elapsedTime += Time.deltaTime;
+        transform.position = new Vector3(transform.position.x, transform.position.y + Mathf.Sin(elapsedTime * frequency) * amplitude, transform.position.z);
     }
 
     public void SetTarget(Vector3 target)
