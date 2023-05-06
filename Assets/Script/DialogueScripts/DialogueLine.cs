@@ -8,6 +8,7 @@ namespace DialogueSystem
     public class DialogueLine : DialogueBaseClass
     {
         private TextMeshProUGUI textHolder;
+        private IEnumerator lineAppear;
 
         [Header ("Text Option")]
         [SerializeField] private string input;
@@ -31,8 +32,28 @@ namespace DialogueSystem
             imageHolder.sprite = characterSprite;
         }
         
-        private void Start() {
-            StartCoroutine(WriteText(input, textHolder, color, font, delay, sound));
+        private void OnEnable() {
+            ResetLine();
+            lineAppear = WriteText(input, textHolder, color, font, delay, sound);
+            StartCoroutine(lineAppear);
+        }
+
+        private void Update() {
+            if (Input.GetMouseButtonDown(0)) {
+                if (textHolder.text != input) {
+                    StopCoroutine(lineAppear);
+                    textHolder.text = input;
+                }
+                else {
+                    finished = true;
+                }
+            }
+        }
+
+        private void ResetLine() {
+            textHolder = GetComponent<TextMeshProUGUI>();
+            textHolder.text = "";
+            finished = false;
         }
     }
 
