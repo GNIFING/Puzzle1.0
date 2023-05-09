@@ -9,6 +9,7 @@ namespace DialogueSystem
     {
         private TextMeshProUGUI textHolder;
         private IEnumerator lineAppear;
+        private TextMeshProUGUI nameHolder;
 
         [Header ("Text Option")]
         [SerializeField] private string input;
@@ -21,20 +22,28 @@ namespace DialogueSystem
         [Header ("Sound")]
         [SerializeField] private AudioClip sound;
 
+        [Header ("Character Name")]
+        [SerializeField] private string charName;
+
         [Header ("Character Image")]
         [SerializeField] private Sprite characterSprite;
         [SerializeField] private Image imageHolder;
+        
 
         private void Awake() {
-            textHolder = GetComponent<TextMeshProUGUI>();
+            textHolder = GetComponent<TextMeshProUGUI>(); 
             textHolder.text = "";
+
+            nameHolder = transform.Find("CharacterNameHolder/Name").GetComponent<TextMeshProUGUI>();
+            nameHolder.text = "";
+            Debug.Log(nameHolder);
 
             imageHolder.sprite = characterSprite;
         }
         
         private void OnEnable() {
             ResetLine();
-            lineAppear = WriteText(input, textHolder, color, font, delay, sound);
+            lineAppear = WriteText(input, textHolder, color, font, delay, sound, charName, nameHolder);
             StartCoroutine(lineAppear);
         }
 
@@ -53,6 +62,8 @@ namespace DialogueSystem
         private void ResetLine() {
             textHolder = GetComponent<TextMeshProUGUI>();
             textHolder.text = "";
+            nameHolder = transform.Find("CharacterNameHolder/Name").GetComponent<TextMeshProUGUI>();
+            nameHolder.text = "";
             finished = false;
         }
     }
