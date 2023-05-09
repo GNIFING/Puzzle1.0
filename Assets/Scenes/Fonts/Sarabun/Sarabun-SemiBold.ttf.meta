@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 9d2cc7dbddf46af4b94ff5d8bbfa8a2c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Sarabun SemiBold
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3677635dd93d5b549bdc3f8ce090f7bf, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

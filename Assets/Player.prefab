@@ -46,7 +46,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.4}
   serializedVersion: 2
   m_Radius: 3
 --- !u!114 &8750516981137633724
@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 8750516981241772989}
   - component: {fileID: 8750516981241772096}
   - component: {fileID: 8750516981241772097}
+  - component: {fileID: 5045397731446400933}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -139,8 +140,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.19975968, g: 0.26749372, b: 0.6320754, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0f39a9205e4394ee1b6ba8269428d176, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -164,9 +165,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 8750516982815247507}
   speed: 5
+  animator: {fileID: 5045397731446400933}
   score: 0
   maxStamina: 100
   stamina: 100
+  junkLossed: 0
   staminaBar: {fileID: 8750516982740768666}
   scoreBoard: {fileID: 8750516983162758287}
   entryFromPrevScene: {x: 0, y: 0, z: 0}
@@ -174,7 +177,7 @@ MonoBehaviour:
   invincibleCoolDown: 2
   minimum: 0.3
   maximum: 1
-  cyclesPerSecond: 0.5
+  transitionTime: 1
 --- !u!70 &8750516981241772096
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -188,8 +191,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.009006023}
-  m_Size: {x: 1, y: 1.5497034}
+  m_Offset: {x: 0, y: -0.58947086}
+  m_Size: {x: 1, y: 1.5205097}
   m_Direction: 0
 --- !u!50 &8750516981241772097
 Rigidbody2D:
@@ -212,6 +215,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &5045397731446400933
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8750516981241772988}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fdd2790f0b4e1fc44b3a0d4cc6d3ed4f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8750516982815247501
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,10 +530,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 3840, y: 2160}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

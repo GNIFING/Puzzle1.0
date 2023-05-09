@@ -9,16 +9,36 @@ public class GameController : MonoBehaviour
     private int day = 0;
     private int moveSpeedLvl = 1;
     private int studyCourseLvl = 1;
-    private int money = 50;
+    private int money = 0;
 
     public bool shoes1Buyed;
-    public bool shoes2;
-    public bool shoes3Equip;
-    public bool shoes4Equip;
+    public bool shoes2Buyed;
+    public bool shoes3Buyed;
+    public int shoesEquip;
+
+    public bool staminaBuff1Buyed;
+    public bool staminaBuff2Buyed;
+
+    public bool studyCourse1Buyed;
+    public bool studyCourse2Buyed;
+
+    public bool magnetBuyed;
+    public int magnetEquip;
+
+    public void Start()
+    {
+        //ResetGame();
+        LoadGame();    
+    }
 
     public void NextDay()
     {
-        day += 1;
+        if(day != 9)
+        {
+            day += 1;
+            PlayerPrefs.SetInt("day", day);
+        }
+        SaveGame();
     }
 
     public void SaveGame()
@@ -29,6 +49,20 @@ public class GameController : MonoBehaviour
         PlayerPrefs.SetInt("moveSpeedLvl", moveSpeedLvl);
         PlayerPrefs.SetInt("studyCourseLvl", studyCourseLvl);
         PlayerPrefs.SetInt("money", money);
+
+        PlayerPrefs.SetInt("shoes1Buyed", shoes1Buyed ? 1 : 0);
+        PlayerPrefs.SetInt("shoes2Buyed", shoes1Buyed ? 1 : 0);
+        PlayerPrefs.SetInt("shoes3Buyed", shoes1Buyed ? 1 : 0);
+        PlayerPrefs.SetInt("shoesEquip", shoesEquip);
+
+        PlayerPrefs.SetInt("magnetBuyed", magnetBuyed ? 1 : 0);
+
+        PlayerPrefs.SetInt("staminaBuff1Buyed", staminaBuff1Buyed ? 1 : 0);
+        PlayerPrefs.SetInt("staminaBuff2Buyed", staminaBuff2Buyed ? 1 : 0);
+
+        PlayerPrefs.SetInt("studyCourse1Buyed", studyCourse1Buyed ? 1 : 0);
+        PlayerPrefs.SetInt("studyCourse2Buyed", studyCourse2Buyed ? 1 : 0);
+
         PlayerPrefs.Save();
     }
 
@@ -40,6 +74,19 @@ public class GameController : MonoBehaviour
         moveSpeedLvl = PlayerPrefs.GetInt("moveSpeedLvl", 1);
         studyCourseLvl = PlayerPrefs.GetInt("studyCourseLvl", 1);
         money = PlayerPrefs.GetInt("money", 0);
+
+        shoes1Buyed = PlayerPrefs.GetInt("shoes1Buyed", 0) == 1 ? true : false;
+        shoes2Buyed = PlayerPrefs.GetInt("shoes2Buyed", 0) == 1 ? true : false;
+        shoes3Buyed = PlayerPrefs.GetInt("shoes3Buyed", 0) == 1 ? true : false;
+        shoesEquip = PlayerPrefs.GetInt("shoesEquip", 0);
+
+        magnetBuyed = PlayerPrefs.GetInt("magnetBuyed", 0) == 1 ? true : false;
+
+        staminaBuff1Buyed = PlayerPrefs.GetInt("staminaBuff1Buyed", 0) == 1 ? true : false;
+        staminaBuff2Buyed = PlayerPrefs.GetInt("staminaBuff2Buyed", 0) == 1 ? true : false;
+
+        studyCourse1Buyed = PlayerPrefs.GetInt("studyCourse1Buyed", 0) == 1 ? true : false;
+        studyCourse2Buyed = PlayerPrefs.GetInt("studyCourse2Buyed", 0) == 1 ? true : false;
     }
 
     public void ResetGame()
@@ -50,6 +97,20 @@ public class GameController : MonoBehaviour
         PlayerPrefs.SetInt("moveSpeedLvl", 1);
         PlayerPrefs.SetInt("studyCourseLvl", 1);
         PlayerPrefs.SetInt("money", 0);
+
+        PlayerPrefs.SetInt("shoes1Buyed", 0);
+        PlayerPrefs.SetInt("shoes2Buyed", 0);
+        PlayerPrefs.SetInt("shoes3Buyed", 0);
+        PlayerPrefs.SetInt("shoesEquip", 0);
+
+        PlayerPrefs.SetInt("magnetBuyed", 0);
+
+        PlayerPrefs.SetInt("staminaBuff1Buyed", 0);
+        PlayerPrefs.SetInt("staminaBuff2Buyed", 0);
+
+        PlayerPrefs.SetInt("studyCourse1Buyed", 0);
+        PlayerPrefs.SetInt("studyCourse2Buyed", 0);
+
         PlayerPrefs.Save();
     }
 

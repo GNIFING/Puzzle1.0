@@ -29,7 +29,7 @@ public class SummaryReportController : MonoBehaviour
     } 
 
     // call this function to reset parameters as we can see in the bracket
-    public void ResetSummary() {
+    public static void ResetSummary() {
         junkCollected = 0;
         staminaUsed = 0;
         junkLoss = 0;
@@ -37,7 +37,7 @@ public class SummaryReportController : MonoBehaviour
     }
 
     // if developer doesn't want to assign each params, u can call this function instead (but why?)
-    public void AssignVariable(int junkCol, int stamUsed, int junkL, int income) {
+    public static void AssignVariable(int junkCol, int stamUsed, int junkL, int income) {
         junkCollected = junkCol;
         staminaUsed = stamUsed;
         junkLoss = junkL;
@@ -45,6 +45,8 @@ public class SummaryReportController : MonoBehaviour
     }
 
     public void LoadMainMenu() {
+        int previousMoney = PlayerPrefs.GetInt("money", 0);
+        PlayerPrefs.SetInt("money", previousMoney + totalIncome);
         Debug.Log("This is Mainmenu");
         SceneManager.LoadScene("MainGame");
     }

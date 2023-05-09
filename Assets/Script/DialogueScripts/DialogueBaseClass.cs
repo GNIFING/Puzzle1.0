@@ -7,12 +7,17 @@ namespace DialogueSystem
 {
     public class DialogueBaseClass : MonoBehaviour
     {
-        public bool finished {get; private set;}
+        public bool finished {get; protected set;}
 
-        protected IEnumerator WriteText(string input, TextMeshProUGUI textHolder, Color32 textColor, TMP_FontAsset textFont, float delay, AudioClip sound) {
+        protected IEnumerator WriteText(string input, TextMeshProUGUI textHolder, Color32 textColor, TMP_FontAsset textFont, float delay, AudioClip sound, string charName, TextMeshProUGUI nameHolder) {
             finished = false;
             textHolder.color = textColor;
             textHolder.font = textFont;
+
+            nameHolder.color = textColor;
+            nameHolder.font = textFont;
+            nameHolder.text = charName;
+            
             for (int i = 0; i < input.Length; i++) {
                 textHolder.text += input[i];
                 SoundManager.instance.PlaySound(sound);

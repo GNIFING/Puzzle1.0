@@ -8,17 +8,25 @@ public class EnemyController : MonoBehaviour
     public Rigidbody2D rigidbody2d; // Reference to the player's Rigidbody2D component
     public float time;
     public Vector2 movement;
+
+    // specify how many points will be deducted from the player if this enemy hit the player
+    public int damage = 1;
     
-    private Transform lastSeenPosition;
+    protected Transform lastSeenPosition;
     private UnityEngine.AI.NavMeshAgent enemy;
 
     [SerializeField] private FieldOfView fieldOfView;
-    private bool canSeePlayer;
+    protected bool canSeePlayer;
+    private bool isAlerted;
 
     public Vector3 spotOne;
     public Vector3 spotTwo;
     private bool spotOneReached;
     private bool spotTwoReached;
+
+    // Animation
+    public Animator animator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +40,7 @@ public class EnemyController : MonoBehaviour
         enemy.updateUpAxis = false;
 
         canSeePlayer = false;
+        isAlerted = false;
         spotOneReached = true;
         spotTwoReached = false;
 
@@ -41,26 +50,10 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        // time += Time.deltaTime;
-        // if(time >= 3f)
-        // {
-        //     int horizontal = Random.Range(-1, 2); 
-        //     int vertical = Random.Range(-1, 2);
-        //     while (horizontal == 0 && vertical == 0)
-        //     { 
-        //         horizontal = Random.Range(-1, 2); 
-        //         vertical = Random.Range(-1, 2);
-        //     }
-        //     movement = new Vector2(horizontal, vertical);
-        //     time = 0f;
-        // }
-        // rigidbody2d.velocity = movement * speed;
-
         // enemy.SetDestination(player.position);
         fieldOfView.SetOrigin(transform.position);
         fieldOfView.SetAimDirection(enemy.desiredVelocity.normalized);
-
-        if(canSeePlayer){
+        if(canSeePlayer || isAlerted){
             enemy.speed = 3f;
             enemy.SetDestination(lastSeenPosition.position);
         } else {
@@ -79,6 +72,19 @@ public class EnemyController : MonoBehaviour
                 }
             }
         }
+
+        // update animation
+        Vector3 movementVector = enemy.velocity.normalized;
+
+        animator.SetBool("walkUp", movementVector.y > 0.01 && movementVector.y > Mathf.Abs(movementVector.x) );
+        animator.SetBool("walkDown", movementVector.y < -0.01 && Mathf.Abs(movementVector.y) > Mathf.Abs(movementVector.x));
+        animator.SetBool("walkLeft", movementVector.x < -0.3 && !animator.GetBool("walkUp") && !animator.GetBool("walkDown"));
+        animator.SetBool("walkRight", movementVector.x > 0.3 && !animator.GetBool("walkUp") && !animator.GetBool("walkDown"));
+
+        
+
+
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -92,7 +98,7 @@ public class EnemyController : MonoBehaviour
 
             bool isInvincible = collision.gameObject.GetComponent<PlayerMovement>().getIsInvincible();
             if(!isInvincible){
-                collision.gameObject.GetComponent<PlayerMovement>().MinusScore();
+                collision.gameObject.GetComponent<PlayerMovement>().MinusScore(damage);
                 collision.gameObject.GetComponent<PlayerMovement>().setInvincible();
             } else {
                 Physics2D.IgnoreCollision(collision.collider, collision.otherCollider, false);
@@ -104,7 +110,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void SetCanSeePlayer(bool b)
+    public virtual void SetCanSeePlayer(bool b)
     {
         this.canSeePlayer = b;
     }
@@ -120,5 +126,10 @@ public class EnemyController : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void setIsAlert(bool alert)
+    {
+        this.isAlerted = alert;
     }
 }
