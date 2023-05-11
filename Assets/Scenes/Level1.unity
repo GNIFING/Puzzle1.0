@@ -2395,9 +2395,9 @@ Tilemap:
   - first: {x: -1, y: -3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 7
-      m_TileSpriteIndex: 7
-      m_TileMatrixIndex: 0
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 1
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -2415,9 +2415,9 @@ Tilemap:
   - first: {x: 1, y: -3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 8
-      m_TileMatrixIndex: 0
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 2
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -3075,9 +3075,9 @@ Tilemap:
   - first: {x: 4, y: 0, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 7
-      m_TileSpriteIndex: 7
-      m_TileMatrixIndex: 0
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 1
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -3275,9 +3275,9 @@ Tilemap:
   - first: {x: 1, y: 1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 8
-      m_TileMatrixIndex: 0
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 2
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -3975,9 +3975,9 @@ Tilemap:
   - first: {x: 4, y: 4, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 7
-      m_TileSpriteIndex: 7
-      m_TileMatrixIndex: 0
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 1
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -3995,9 +3995,9 @@ Tilemap:
   - first: {x: 6, y: 4, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 8
-      m_TileMatrixIndex: 0
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 2
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -4626,11 +4626,11 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 94ceec4e16cf34ccfb4c864cc82d2951, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 7b2956d31f3064d1591f86d267a02355, type: 2}
-  - m_RefCount: 4
+  - m_RefCount: 10
     m_Data: {fileID: 11400000, guid: eca945a26188b486cbe97fae0f430231, type: 2}
-  - m_RefCount: 22
+  - m_RefCount: 19
     m_Data: {fileID: 11400000, guid: a1c9a15aa1c514b36a5247945c45b121, type: 2}
-  - m_RefCount: 25
+  - m_RefCount: 22
     m_Data: {fileID: 11400000, guid: 7996c3ee8b47d4800aefddec34b55d4c, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 7a04899c89d09448c9a1fa69e6cbb0b0, type: 2}
@@ -4649,20 +4649,56 @@ Tilemap:
     m_Data: {fileID: 986560753, guid: 904d82c6be8aac3489f56a26e846c94a, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 1151673967, guid: 904d82c6be8aac3489f56a26e846c94a, type: 3}
-  - m_RefCount: 4
+  - m_RefCount: 10
     m_Data: {fileID: 1876875763, guid: 904d82c6be8aac3489f56a26e846c94a, type: 3}
-  - m_RefCount: 22
+  - m_RefCount: 19
     m_Data: {fileID: -619232362, guid: 904d82c6be8aac3489f56a26e846c94a, type: 3}
-  - m_RefCount: 25
+  - m_RefCount: 22
     m_Data: {fileID: 2018548587, guid: 904d82c6be8aac3489f56a26e846c94a, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -535278884, guid: 904d82c6be8aac3489f56a26e846c94a, type: 3}
   - m_RefCount: 118
     m_Data: {fileID: -2029099305, guid: 904d82c6be8aac3489f56a26e846c94a, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 267
+  - m_RefCount: 261
     m_Data:
       e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  - m_RefCount: 3
+    m_Data:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: -1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  - m_RefCount: 3
+    m_Data:
+      e00: -1
       e01: 0
       e02: 0
       e03: 0
