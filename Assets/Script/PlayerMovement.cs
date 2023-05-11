@@ -39,8 +39,8 @@ public class PlayerMovement : MonoBehaviour
     // public float magnetRadius = 5f;
 
     // Player will blink when got hit by an enemy
-    public float minimum = 0.3f;
-    public float maximum = 1.0f;
+    private float minimum = 0.3f;
+    private float maximum = 1.0f;
     private float a;
     private bool increasing = true;
     Color color;  
