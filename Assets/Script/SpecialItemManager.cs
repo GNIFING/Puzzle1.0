@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TrashManager : MonoBehaviour
+public class SpecialItemManager : MonoBehaviour
 {
-    public Trash trash;
-    private TrashManager trashManagerInstance;
+    public SpecialItem specialItem;
+    private SpecialItemManager specialItemManagerInstance;
     private string spawnedLevel;
 
     private void Awake()
@@ -17,8 +17,8 @@ public class TrashManager : MonoBehaviour
             Destroy(gameObject);
         } else {
             DontDestroyOnLoad(this);
-            if (trashManagerInstance == null){
-                trashManagerInstance = this;
+            if (specialItemManagerInstance == null){
+                specialItemManagerInstance = this;
             } else {
                 Destroy(gameObject);
             }
@@ -34,12 +34,11 @@ public class TrashManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Trash trash = gameObject.GetComponentInChildren<Trash>(true);
         string activeLevel = SceneManager.GetActiveScene().name;
         if(spawnedLevel == activeLevel){
-            trash.gameObject.SetActive(true);
+            specialItem.gameObject.SetActive(true);
         } else {
-            trash.gameObject.SetActive(false);
+            specialItem.gameObject.SetActive(false);
         }
     }
 }
