@@ -119,10 +119,10 @@ public class PlayerMovement : MonoBehaviour
         rigidbody2d.velocity = movement * speed;
 
         // Set the animator's parameters for animate 
-        animator.SetBool("walkUp", movement.y > 0.01 && movement.y > Mathf.Abs(movement.x) );
-        animator.SetBool("walkDown", movement.y < -0.01 && Mathf.Abs(movement.y) > Mathf.Abs(movement.x));
-        animator.SetBool("walkLeft", movement.x < -0.01 && !animator.GetBool("walkUp") && !animator.GetBool("walkDown"));
-        animator.SetBool("walkRight", movement.x > 0.01 && !animator.GetBool("walkUp") && !animator.GetBool("walkDown"));
+        animator.SetBool("walkUp", movement.y > 0.01);
+        animator.SetBool("walkDown", movement.y < -0.01);
+        animator.SetBool("walkLeft", movement.x < -0.01);
+        animator.SetBool("walkRight", movement.x > 0.01);
 
         // print("up:"+animator.GetBool("walkUp")+" down:"+animator.GetBool("walkDown")+" left:"+animator.GetBool("walkLeft")+" right:"+animator.GetBool("walkRight"));
         
