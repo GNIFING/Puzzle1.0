@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 21ae12909dfa64464820da55fc494021, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -103,8 +103,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.6566391}
-  m_Size: {x: 1, y: 1.4138565}
+  m_Offset: {x: -0.030819893, y: -0.7259197}
+  m_Size: {x: 1, y: 1.5524178}
   m_Direction: 0
 --- !u!50 &7215668658300937308
 Rigidbody2D:
@@ -143,6 +143,7 @@ MonoBehaviour:
   rigidbody2d: {fileID: 7215668658300937308}
   time: 0
   movement: {x: 0, y: 0}
+  damage: 1
   fieldOfView: {fileID: 7215668659113368895}
   spotOne: {x: 6.5, y: -19, z: 0}
   spotTwo: {x: 14.5, y: -19, z: 0}
@@ -251,6 +252,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   origin: {x: 13.519644, y: -19.404154, z: -0.53333014}
+  fov: 90
+  viewDistance: 5
   enemyController: {fileID: 7215668658300937309}
 --- !u!137 &7215668659113368894
 SkinnedMeshRenderer:
