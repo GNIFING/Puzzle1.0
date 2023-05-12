@@ -76,14 +76,16 @@ public class EnemyController : MonoBehaviour
         // update animation
         Vector3 movementVector = enemy.velocity.normalized;
 
-        animator.SetBool("walkUp", movementVector.y > 0.01 && movementVector.y > Mathf.Abs(movementVector.x) );
-        animator.SetBool("walkDown", movementVector.y < -0.01 && Mathf.Abs(movementVector.y) > Mathf.Abs(movementVector.x));
-        animator.SetBool("walkLeft", movementVector.x < -0.3 && !animator.GetBool("walkUp") && !animator.GetBool("walkDown"));
-        animator.SetBool("walkRight", movementVector.x > 0.3 && !animator.GetBool("walkUp") && !animator.GetBool("walkDown"));
+        animator.SetFloat("Horizontal", movementVector.x);
+        animator.SetFloat("Vertical", movementVector.y);
+        animator.SetFloat("Speed", movementVector.magnitude);
 
-        
-
-
+        // set facing direction  can customize the threshold
+        if (movement.magnitude > 0.1f)
+        {
+            animator.SetFloat("FacingHorizontal", movement.x);
+            animator.SetFloat("FacingVertical", movement.y);
+        }
 
     }
     private void OnCollisionEnter2D(Collision2D collision)

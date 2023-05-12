@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f; // The speed at which the player moves
     private Rigidbody2D rigidbody2d; // Reference to the player's Rigidbody2D component
     
+    // The animator component
     public Animator animator;
 
     // Score and stamina
@@ -119,12 +120,17 @@ public class PlayerMovement : MonoBehaviour
         rigidbody2d.velocity = movement * speed;
 
         // Set the animator's parameters for animate 
-        animator.SetBool("walkUp", movement.y > 0.01);
-        animator.SetBool("walkDown", movement.y < -0.01);
-        animator.SetBool("walkLeft", movement.x < -0.01);
-        animator.SetBool("walkRight", movement.x > 0.01);
+        animator.SetFloat("Horizontal", horizontal);
+        animator.SetFloat("Vertical", vertical);
+        animator.SetFloat("Speed", movement.magnitude);
+        
+        // Set the face direction of the player
 
-        // print("up:"+animator.GetBool("walkUp")+" down:"+animator.GetBool("walkDown")+" left:"+animator.GetBool("walkLeft")+" right:"+animator.GetBool("walkRight"));
+        if (movement.magnitude > 0.1f)
+        {
+            animator.SetFloat("FacingHorizontal", movement.x);
+            animator.SetFloat("FacingVertical", movement.y);
+        }
         
         // Set the score and health
         scoreBoard.SetScore(score);
