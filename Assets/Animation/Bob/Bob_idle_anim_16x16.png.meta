@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b26e0204a9834a94cb998a19310ff123
+guid: 041a6e5b88f91564797dd83be958df8a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Amelia_run_16x16_0
+      name: Bob_idle_anim_16x16_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27b642c94da2c2b4083c684d3d22fc1c
-      internalID: -1936435299
+      spriteID: e9c1991cecafa5e40a89369d223ab25d
+      internalID: -1051698998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_1
+      name: Bob_idle_anim_16x16_1
       rect:
         serializedVersion: 2
         x: 16
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7740767a0c4f66d4995dd972af139229
-      internalID: -922959580
+      spriteID: 86ce28bb0ba32e44d9100f90aece2ce8
+      internalID: 605672747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_2
+      name: Bob_idle_anim_16x16_2
       rect:
         serializedVersion: 2
         x: 32
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c835dee91f22ed84a91e7a6a576a3ca9
-      internalID: -476941566
+      spriteID: 26623009819c6314b9cc7625ef330e6b
+      internalID: -825562861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_3
+      name: Bob_idle_anim_16x16_3
       rect:
         serializedVersion: 2
         x: 48
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc43b6859df77764bb63474632a62167
-      internalID: -1679733054
+      spriteID: 942b9b3b5b5ea634cafa7a8317209213
+      internalID: -859715251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_4
+      name: Bob_idle_anim_16x16_4
       rect:
         serializedVersion: 2
         x: 64
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90fef0c034e7fe0459daeddc1c636622
-      internalID: -1986161426
+      spriteID: 118a523e7b2981c4e8c7138be285bdd9
+      internalID: 1162366290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_5
+      name: Bob_idle_anim_16x16_5
       rect:
         serializedVersion: 2
         x: 80
@@ -223,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5eda3732b3137424daaba08c14943f9b
-      internalID: -597155022
+      spriteID: 807661c480ae9c6479b2d724989f1673
+      internalID: 1254313730
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_6
+      name: Bob_idle_anim_16x16_6
       rect:
         serializedVersion: 2
         x: 96
@@ -244,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07f1649aabd6bde47ba3d4dcbe33a1be
-      internalID: -1880981542
+      spriteID: 11b3cb5fbed1f9c4189e19617bb44d02
+      internalID: -1460279164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_7
+      name: Bob_idle_anim_16x16_7
       rect:
         serializedVersion: 2
         x: 112
@@ -265,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f4d8b73b497e024e89910f2ff119f84
-      internalID: 172303362
+      spriteID: 7f8d1ef78205f5a46afca245208c5610
+      internalID: 1918175983
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_8
+      name: Bob_idle_anim_16x16_8
       rect:
         serializedVersion: 2
         x: 128
@@ -286,14 +286,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbad5e8273a88364c92f06d8b129acb7
-      internalID: 300526227
+      spriteID: e45ae8fea882d5e4c800a0d9f361437b
+      internalID: 1127847167
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_9
+      name: Bob_idle_anim_16x16_9
       rect:
         serializedVersion: 2
         x: 144
@@ -307,14 +307,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21b72d3e5acf1174999ff99bdde53419
-      internalID: -392733809
+      spriteID: c5e649d228c9b6c469deb181ad219213
+      internalID: -1701125862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_10
+      name: Bob_idle_anim_16x16_10
       rect:
         serializedVersion: 2
         x: 160
@@ -328,14 +328,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 669de798de664654dbb5ee971ba35da0
-      internalID: 1355484323
+      spriteID: 27464c04031448b41be28306779d53c3
+      internalID: -1439875120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_11
+      name: Bob_idle_anim_16x16_11
       rect:
         serializedVersion: 2
         x: 176
@@ -349,14 +349,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 235bd3b9286590b4aa647382af7cbbbc
-      internalID: -376565472
+      spriteID: bee9b943155c45e43b4efb4caa916074
+      internalID: -2091256901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_12
+      name: Bob_idle_anim_16x16_12
       rect:
         serializedVersion: 2
         x: 192
@@ -370,14 +370,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f1fb1190ce985045ab8b65c701b88ef
-      internalID: -180118342
+      spriteID: 0c159b1a256b0ec44acc8146fad05170
+      internalID: 644417753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_13
+      name: Bob_idle_anim_16x16_13
       rect:
         serializedVersion: 2
         x: 208
@@ -391,14 +391,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6857ff698afd60841ad10280c2b5f3d9
-      internalID: 1338524399
+      spriteID: 8271fa29cc23ac440a390cf80425018c
+      internalID: -808392444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_14
+      name: Bob_idle_anim_16x16_14
       rect:
         serializedVersion: 2
         x: 224
@@ -412,14 +412,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 481df374e5de3ec4a9faa2509b079e66
-      internalID: -1634678879
+      spriteID: 6160d384711bd8f4394e92a55a43691d
+      internalID: 1328836747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_15
+      name: Bob_idle_anim_16x16_15
       rect:
         serializedVersion: 2
         x: 240
@@ -433,14 +433,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4d514c51e145104f864b88a2e220155
-      internalID: 224127542
+      spriteID: 1dafac8b4e1d4b5438529fc5d033db0c
+      internalID: 193514083
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_16
+      name: Bob_idle_anim_16x16_16
       rect:
         serializedVersion: 2
         x: 256
@@ -454,14 +454,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d97171cbeadf20d42ba15f31dc1509d6
-      internalID: -1968269496
+      spriteID: bafdd0eac38e142448131a2716efc6f9
+      internalID: -697805130
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_17
+      name: Bob_idle_anim_16x16_17
       rect:
         serializedVersion: 2
         x: 272
@@ -475,14 +475,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edb249974c5a7bd4280b03acd604b989
-      internalID: 1685322837
+      spriteID: 09801d3c1adcfd445a76219017af5316
+      internalID: 287248201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_18
+      name: Bob_idle_anim_16x16_18
       rect:
         serializedVersion: 2
         x: 288
@@ -496,14 +496,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 254e72190bef21b4d888197ea5b76436
-      internalID: 1530952969
+      spriteID: ecb5d6970e73aa74f81f06dccba85025
+      internalID: -2044429087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_19
+      name: Bob_idle_anim_16x16_19
       rect:
         serializedVersion: 2
         x: 304
@@ -517,14 +517,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bdfe90f64db5234da1695d8cd7871fa
-      internalID: 1532359735
+      spriteID: 9f6dffdc875521e4da6d6c9847a18c92
+      internalID: -354514192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_20
+      name: Bob_idle_anim_16x16_20
       rect:
         serializedVersion: 2
         x: 320
@@ -538,14 +538,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3995fca5eb843b74796854a5a8dae423
-      internalID: -234026064
+      spriteID: 256b386b87bcb494a9856e4141a6757b
+      internalID: -698737692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_21
+      name: Bob_idle_anim_16x16_21
       rect:
         serializedVersion: 2
         x: 336
@@ -559,14 +559,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 787e45a706516824eb6f94cb28e10fe0
-      internalID: 314709967
+      spriteID: 250feda5ed0f01543b5c5cfa89cb7f23
+      internalID: -2028795405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_22
+      name: Bob_idle_anim_16x16_22
       rect:
         serializedVersion: 2
         x: 352
@@ -580,14 +580,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d64236487da5944db11aa36862fdd1a
-      internalID: 1882343722
+      spriteID: d4c6e03c535f9db48863287fb661e139
+      internalID: -1358950465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Amelia_run_16x16_23
+      name: Bob_idle_anim_16x16_23
       rect:
         serializedVersion: 2
         x: 368
@@ -601,8 +601,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81d89fc2725ae52489dfad3e24859408
-      internalID: -1231222323
+      spriteID: 548aa553df830794092ada02103bd690
+      internalID: -839439699
       vertices: []
       indices: 
       edges: []
@@ -618,30 +618,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Amelia_run_16x16_10: 1355484323
-      Amelia_run_16x16_0: -1936435299
-      Amelia_run_16x16_4: -1986161426
-      Amelia_run_16x16_21: 314709967
-      Amelia_run_16x16_1: -922959580
-      Amelia_run_16x16_9: -392733809
-      Amelia_run_16x16_2: -476941566
-      Amelia_run_16x16_6: -1880981542
-      Amelia_run_16x16_12: -180118342
-      Amelia_run_16x16_15: 224127542
-      Amelia_run_16x16_3: -1679733054
-      Amelia_run_16x16_11: -376565472
-      Amelia_run_16x16_18: 1530952969
-      Amelia_run_16x16_8: 300526227
-      Amelia_run_16x16_13: 1338524399
-      Amelia_run_16x16_14: -1634678879
-      Amelia_run_16x16_7: 172303362
-      Amelia_run_16x16_5: -597155022
-      Amelia_run_16x16_16: -1968269496
-      Amelia_run_16x16_17: 1685322837
-      Amelia_run_16x16_19: 1532359735
-      Amelia_run_16x16_20: -234026064
-      Amelia_run_16x16_22: 1882343722
-      Amelia_run_16x16_23: -1231222323
+      Bob_idle_anim_16x16_11: -2091256901
+      Bob_idle_anim_16x16_6: -1460279164
+      Bob_idle_anim_16x16_19: -354514192
+      Bob_idle_anim_16x16_2: -825562861
+      Bob_idle_anim_16x16_5: 1254313730
+      Bob_idle_anim_16x16_16: -697805130
+      Bob_idle_anim_16x16_3: -859715251
+      Bob_idle_anim_16x16_1: 605672747
+      Bob_idle_anim_16x16_12: 644417753
+      Bob_idle_anim_16x16_10: -1439875120
+      Bob_idle_anim_16x16_0: -1051698998
+      Bob_idle_anim_16x16_18: -2044429087
+      Bob_idle_anim_16x16_22: -1358950465
+      Bob_idle_anim_16x16_23: -839439699
+      Bob_idle_anim_16x16_21: -2028795405
+      Bob_idle_anim_16x16_17: 287248201
+      Bob_idle_anim_16x16_14: 1328836747
+      Bob_idle_anim_16x16_4: 1162366290
+      Bob_idle_anim_16x16_8: 1127847167
+      Bob_idle_anim_16x16_9: -1701125862
+      Bob_idle_anim_16x16_15: 193514083
+      Bob_idle_anim_16x16_13: -808392444
+      Bob_idle_anim_16x16_7: 1918175983
+      Bob_idle_anim_16x16_20: -698737692
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
