@@ -20,6 +20,15 @@ public class SpecialItem : MonoBehaviour
 
     private string spawnedLevel;
 
+    public GameObject textPanel;
+
+    private void OpenPanel()
+    {
+        if (textPanel != null)
+        {
+            textPanel.SetActive(true);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +40,8 @@ public class SpecialItem : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(this.transform.parent.gameObject);
+            OpenPanel();
+            PlayerPrefs.SetInt("specialItemFound", 1);
             Time.timeScale = 0;
         }
         else if (collision.gameObject.CompareTag("Enemy"))
