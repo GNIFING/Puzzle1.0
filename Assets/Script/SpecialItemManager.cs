@@ -23,6 +23,10 @@ public class SpecialItemManager : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        if  (PlayerPrefs.HasKey("specialItemFound") && PlayerPrefs.GetInt("specialItemFound") == 1){
+            Destroy(gameObject);
+        }
     }
 
     // Start is called before the first frame update
