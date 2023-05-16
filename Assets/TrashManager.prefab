@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trash: {fileID: 1643501995966793552}
-  trashManagerInstance: {fileID: 0}
 --- !u!1001 &2344449248830016886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -126,13 +125,21 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3911319583059790373, guid: 1932550e28a6f4f42a85e65f30c8c1ff, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3911319583059790375, guid: 1932550e28a6f4f42a85e65f30c8c1ff, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.476
+      value: 1.19
       objectReference: {fileID: 0}
     - target: {fileID: 3911319583059790375, guid: 1932550e28a6f4f42a85e65f30c8c1ff, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.482
+      value: 1.205
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911319583059790379, guid: 1932550e28a6f4f42a85e65f30c8c1ff, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1932550e28a6f4f42a85e65f30c8c1ff, type: 3}
