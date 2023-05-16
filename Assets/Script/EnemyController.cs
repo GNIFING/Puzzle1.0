@@ -50,6 +50,8 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        GetComponent<UnityEngine.AI.NavMeshAgent>().speed = this.speed;
+
         // enemy.SetDestination(player.position);
         fieldOfView.SetOrigin(transform.position);
         fieldOfView.SetAimDirection(enemy.desiredVelocity.normalized);
