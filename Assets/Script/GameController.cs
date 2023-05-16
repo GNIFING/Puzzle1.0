@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
     private float maxStamina = 100f;
     private float stamina = 80f;
-    private int day = 0;
+    protected int day = 0;
     private int moveSpeedLvl = 1;
     private int studyCourseLvl = 1;
     private int money = 0;

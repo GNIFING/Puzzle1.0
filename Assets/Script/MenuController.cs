@@ -66,4 +66,10 @@ public class MenuController : MonoBehaviour
         Debug.Log("Summary!");
         SceneManager.LoadScene("Summary");
     }
+
+    public void Suicide()
+    {
+        Debug.Log("Game over!");
+        SceneManager.LoadScene("GameOver");
+    }
 }
