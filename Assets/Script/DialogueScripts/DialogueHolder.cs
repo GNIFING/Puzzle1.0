@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace DialogueSystem
 {
@@ -44,6 +45,8 @@ namespace DialogueSystem
             gameObject.SetActive(false);
             if(isTutorialDialogue){
                 tutorialDialogueManager.deactivateTutorialDialogue();
+            } else {
+                SceneManager.LoadScene("MainMenu");
             }
         }
 

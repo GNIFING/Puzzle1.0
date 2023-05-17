@@ -14,7 +14,10 @@ public class MenuController : MonoBehaviour
     private GameObject store;
     [SerializeField]
     private GameController gameController;
-    
+    [SerializeField]
+    private GameObject dialogueHolder;
+    private int day;
+
     public TextMeshProUGUI money;
 
 
@@ -95,4 +98,12 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.DeleteKey("level_3_tutorial_played");
         PlayerPrefs.DeleteKey("level_4_tutorial_played");
     }
+
+    // public void NextDay () {
+    //     day = PlayerPrefs.GetInt("day", 1);
+    //     Debug.Log(day);
+    //     if (day == 4) {
+    //         SceneManager.LoadScene("DialogueTest");
+    //     }
+    // }
 }

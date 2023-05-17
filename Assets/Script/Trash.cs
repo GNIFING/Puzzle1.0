@@ -18,6 +18,7 @@ public class Trash : MonoBehaviour
     private float frequency = 2f; // adjust this value to control the frequency of the coin's movement
     private float elapsedTime = 0f;
 
+    public int score = 1;
 
     private Trash trashInstance;
     private string spawnedLevel;
@@ -50,7 +51,7 @@ public class Trash : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<PlayerMovement>().AddScore();
+            collision.gameObject.GetComponent<PlayerMovement>().AddScore(score);
             Destroy(this.transform.parent.gameObject);
         }
         else if (collision.gameObject.CompareTag("Enemy"))
