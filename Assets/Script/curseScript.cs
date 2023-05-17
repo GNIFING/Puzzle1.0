@@ -14,6 +14,9 @@ public class curseScript : MonoBehaviour
     // list of prefab of enemies to spawn
     public List<GameObject> enemies;
 
+    // golden trash
+    public GameObject goldenTrash;
+
     // navmesh
     public GameObject navMesh;
     private NavMeshSurface2d navMeshSurface;
@@ -47,7 +50,6 @@ public class curseScript : MonoBehaviour
             }
         }
 
-        navMeshSurface.BuildNavMesh();
         isNavMeshBuilt = true;
 
     }
@@ -62,12 +64,12 @@ public class curseScript : MonoBehaviour
         }
 
 
-        // // check if golden trash is null
-        // if (goldenTrash == null)
-        // {
-        //     // destroy exit doors
-        //     Destroy(exitDoor);
-        // }
+        // check if golden trash is null
+        if (goldenTrash == null)
+        {
+            // destroy exit doors
+            Destroy(exitDoor);
+        }
 
 
     }

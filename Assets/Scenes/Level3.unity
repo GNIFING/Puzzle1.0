@@ -17237,7 +17237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d0452d4b17646e38a8cf2e27af9a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Level2
+  sceneToLoad: Level4
   transition: {fileID: 1510991666}
   transitionTime: 0
 --- !u!114 &1379085045
