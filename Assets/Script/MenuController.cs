@@ -97,6 +97,7 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.DeleteKey("level_2_tutorial_played");
         PlayerPrefs.DeleteKey("level_3_tutorial_played");
         PlayerPrefs.DeleteKey("level_4_tutorial_played");
+        PlayerPrefs.DeleteKey("specialItemFound");
     }
 
     // public void NextDay () {
