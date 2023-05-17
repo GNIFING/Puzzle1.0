@@ -99,6 +99,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 856ded60372dd784e8cefb3d534e4b8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 1
+  spriteArray:
+  - {fileID: 978106273, guid: d6abf5f52155b4139ae22fcbb80a0134, type: 3}
+  - {fileID: 67236435, guid: d6abf5f52155b4139ae22fcbb80a0134, type: 3}
+  - {fileID: -136061507, guid: d6abf5f52155b4139ae22fcbb80a0134, type: 3}
+  - {fileID: 472196840, guid: d6abf5f52155b4139ae22fcbb80a0134, type: 3}
+  - {fileID: 1837585607, guid: d6abf5f52155b4139ae22fcbb80a0134, type: 3}
+  - {fileID: 61033215, guid: d6abf5f52155b4139ae22fcbb80a0134, type: 3}
+  - {fileID: 1636626308, guid: d6abf5f52155b4139ae22fcbb80a0134, type: 3}
+  - {fileID: -265670824, guid: d6abf5f52155b4139ae22fcbb80a0134, type: 3}
+  - {fileID: -2046716677, guid: d6abf5f52155b4139ae22fcbb80a0134, type: 3}
+  - {fileID: 1860062301, guid: d6abf5f52155b4139ae22fcbb80a0134, type: 3}
+  - {fileID: -44707880, guid: d6abf5f52155b4139ae22fcbb80a0134, type: 3}
+  - {fileID: 704823596, guid: d6abf5f52155b4139ae22fcbb80a0134, type: 3}
+  - {fileID: -800701349, guid: d6abf5f52155b4139ae22fcbb80a0134, type: 3}
+  - {fileID: 2132196958, guid: d6abf5f52155b4139ae22fcbb80a0134, type: 3}
+  - {fileID: -895324933, guid: d6abf5f52155b4139ae22fcbb80a0134, type: 3}
+  - {fileID: -1400888717, guid: d6abf5f52155b4139ae22fcbb80a0134, type: 3}
 --- !u!61 &3911319583059790375
 BoxCollider2D:
   m_ObjectHideFlags: 0

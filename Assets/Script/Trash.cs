@@ -23,22 +23,16 @@ public class Trash : MonoBehaviour
     private Trash trashInstance;
     private string spawnedLevel;
 
+    public Sprite[] spriteArray;
+    private SpriteRenderer spriteRenderer;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        // Scene scene = gameObject.scene;
-        // spawnedLevel = scene.name;
-        // if (PlayerPrefs.HasKey(spawnedLevel + "_isVisited") && PlayerPrefs.GetInt(spawnedLevel + "_isVisited") == 1){
-        //     Destroy(gameObject);
-        // } else {
-        //     DontDestroyOnLoad(this);
-        //     if (trashInstance == null){
-        //         trashInstance = this;
-        //     } else {
-        //         Destroy(gameObject);
-        //     }
-        // }
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        int rdnInt = Random.Range(0, spriteArray.Length);
+        spriteRenderer.sprite = spriteArray[rdnInt]; 
     }
 
     // Start is called before the first frame update
