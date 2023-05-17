@@ -14,7 +14,10 @@ public class MenuController : MonoBehaviour
     private GameObject store;
     [SerializeField]
     private GameController gameController;
-    
+    [SerializeField]
+    private GameObject dialogueHolder;
+    private int day;
+
     public TextMeshProUGUI money;
 
 
@@ -72,4 +75,12 @@ public class MenuController : MonoBehaviour
         Debug.Log("Game over!");
         SceneManager.LoadScene("GameOver");
     }
+
+    // public void NextDay () {
+    //     day = PlayerPrefs.GetInt("day", 1);
+    //     Debug.Log(day);
+    //     if (day == 4) {
+    //         SceneManager.LoadScene("DialogueTest");
+    //     }
+    // }
 }

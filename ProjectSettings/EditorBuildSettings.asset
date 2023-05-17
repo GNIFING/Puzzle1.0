@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 8ccccf4e9f1d3f24d937734d82cc78af
+  - enabled: 1
+    path: Assets/Scenes/DialogueTest.unity
+    guid: 4ff8281c45a6f7b4dbc80eac8990c3cb
   m_configObjects: {}
