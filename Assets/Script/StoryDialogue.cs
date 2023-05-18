@@ -10,7 +10,6 @@ public class StoryDialogue : MonoBehaviour
 {
     public TextMeshProUGUI textHolder;
     private IEnumerator lineAppear;
-    private bool finished = false;
     AudioSource source;
 
     [Header ("Text Option")]
@@ -42,20 +41,15 @@ public class StoryDialogue : MonoBehaviour
                 StopCoroutine(lineAppear);
                 textHolder.text = input;
             }
-            else {
-                finished = true;
-            }
         }
     }
 
     private void ResetLine() {
         textHolder = GetComponent<TextMeshProUGUI>();
         textHolder.text = "";
-        finished = false;
     }
 
     protected IEnumerator WriteText(string input, TextMeshProUGUI textHolder, float delay, AudioClip sound) {
-        finished = false;
         
         for (int i = 0; i < input.Length; i++) {
             textHolder.text += input[i];
@@ -67,7 +61,6 @@ public class StoryDialogue : MonoBehaviour
         }
 
         yield return new WaitUntil(() => Input.GetMouseButton(0));
-        finished = true;
     }
 
     public void NextScene()

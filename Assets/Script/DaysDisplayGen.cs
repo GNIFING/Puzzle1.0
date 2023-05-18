@@ -6,7 +6,7 @@ using TMPro;
 public class DaysDisplayGen : MonoBehaviour
 {
     public string word;
-    public float fadeInDuration = 2f;
+    public float fadeInDuration = 1f;
     public float freezeDuration = 1f;
     public float fadeOutDuration = 2f;
 
