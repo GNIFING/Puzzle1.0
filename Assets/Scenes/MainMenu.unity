@@ -11999,6 +11999,7 @@ MonoBehaviour:
   moneyMenuText: {fileID: 1595611970}
   billNameText: {fileID: 1521910552}
   billPrice: {fileID: 374862731}
+  moneyInMenuText: {fileID: 1595611970}
   thankYouText: {fileID: 2066055373}
   billButton: {fileID: 172272533}
   payObject: {fileID: 1917287496}

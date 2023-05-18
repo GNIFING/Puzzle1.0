@@ -16,6 +16,7 @@ public class HomeManager : MonoBehaviour
 
     public TextMeshProUGUI billNameText;
     public TextMeshProUGUI billPrice;
+    public TextMeshProUGUI moneyInMenuText;
     public GameObject thankYouText;
     public GameObject billButton;
     public GameObject payObject;
@@ -96,6 +97,9 @@ public class HomeManager : MonoBehaviour
             int saveMoney = PlayerPrefs.GetInt("money");
             PlayerPrefs.SetInt("money", saveMoney - 30);
             gameController.Money -= 30;
+
+            moneyText.text = "Money : " + gameController.Money.ToString();
+            moneyInMenuText.text = gameController.Money.ToString();
         }
         else if (!isPaySecondBill && gameController.Money >= billPriceEachDay[1])
         {
@@ -109,6 +113,9 @@ public class HomeManager : MonoBehaviour
             int saveMoney = PlayerPrefs.GetInt("money");
             PlayerPrefs.SetInt("money", saveMoney - 60);
             gameController.Money -= 60;
+
+            moneyText.text = "Money : " + gameController.Money.ToString();
+            moneyInMenuText.text = gameController.Money.ToString();
         }
         else if (!isPayThirdBill && gameController.Money >= billPriceEachDay[2])
         {
@@ -122,7 +129,10 @@ public class HomeManager : MonoBehaviour
             int saveMoney = PlayerPrefs.GetInt("money");
             PlayerPrefs.SetInt("money", saveMoney - 100);
             gameController.Money -= 100;
-            
+
+            moneyText.text = "Money : " + gameController.Money.ToString();
+            moneyInMenuText.text = gameController.Money.ToString();
+
             SceneManager.LoadScene("EndingDialogue");
             //Win Game Here
         }
