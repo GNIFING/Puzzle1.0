@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public float speed = 2f;
+    public float speed = 1.5f;
     public Rigidbody2D rigidbody2d; // Reference to the player's Rigidbody2D component
     public float time;
     public Vector2 movement;
@@ -59,7 +59,7 @@ public class EnemyController : MonoBehaviour
             enemy.speed = 3f;
             enemy.SetDestination(lastSeenPosition.position);
         } else {
-            enemy.speed = 1.5f;
+            enemy.speed = speed;
             if (spotOneReached) {
                 if (reachDestination()) {
                     enemy.SetDestination(spotOne);
