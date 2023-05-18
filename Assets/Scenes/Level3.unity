@@ -4954,11 +4954,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4154635396377342088, guid: c694208cffc154f8d9d3c96af1bef07e, type: 3}
       propertyPath: spotOne.y
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4154635396377342088, guid: c694208cffc154f8d9d3c96af1bef07e, type: 3}
       propertyPath: spotTwo.x
-      value: 16.5
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4154635396377342088, guid: c694208cffc154f8d9d3c96af1bef07e, type: 3}
       propertyPath: spotTwo.y
@@ -4986,7 +4986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7215668658300937297, guid: c694208cffc154f8d9d3c96af1bef07e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7215668658300937297, guid: c694208cffc154f8d9d3c96af1bef07e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11371,7 +11371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7215668658300937309, guid: 44391edcb039f42dbaab380d87e452f1, type: 3}
       propertyPath: spotTwo.x
-      value: 11
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: 7215668658300937309, guid: 44391edcb039f42dbaab380d87e452f1, type: 3}
       propertyPath: spotTwo.y
