@@ -60,6 +60,8 @@ public class HomeManager : MonoBehaviour
         if (gameController.Money >= (int)(billPriceEachday[gameController.Day] * scale))
         {
             gameController.Money -= (int)(billPriceEachday[gameController.Day] * scale);
+            int saveMoney = PlayerPrefs.GetInt("money");
+            PlayerPrefs.SetInt("money", saveMoney - (int)(billPriceEachday[gameController.Day] * scale));
             billPriceEachday[gameController.Day] = -1;
             UpdateHome();
             billButton.SetActive(false);

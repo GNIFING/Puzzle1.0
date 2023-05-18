@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     // [SerializeField] private FieldOfView fieldOfView;
     public TextMeshProUGUI scoreText;
+    //public TextMeshProUGUI staminaText;
     public float speed = 5f; // The speed at which the player moves
     private Rigidbody2D rigidbody2d; // Reference to the player's Rigidbody2D component
     
@@ -49,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float transitionTime = 1f;
 
+
     private void Awake()
     {
         // Get reference to the Rigidbody2D component
@@ -64,6 +66,8 @@ public class PlayerMovement : MonoBehaviour
         } else {
             transform.position = entryFromPrevScene;
         }
+
+        UpdatePlayerStat();
     }
 
     private void Start()
@@ -85,8 +89,15 @@ public class PlayerMovement : MonoBehaviour
             this.junkLossed = inGameJunkLossed;
         }
 
-        // Set the stamina 
+        // Set the maxStamina
+        if (PlayerPrefs.HasKey("inGameMaxStamina"))
+        {
+            float inGameMaxStamina = PlayerPrefs.GetFloat("inGameMaxStamina");
+            this.maxStamina = inGameMaxStamina;
+        }
         staminaBar.SetMax(Mathf.RoundToInt(maxStamina));
+
+        // Set the stamina 
         if(PlayerPrefs.HasKey("inGameStamina"))
         {
             float inGameStamina = PlayerPrefs.GetFloat("inGameStamina");
@@ -137,6 +148,8 @@ public class PlayerMovement : MonoBehaviour
 
         // Check if player run out of stamina
         checkOutOfStamina();
+
+        //staminaText.text = ((int)stamina).ToString();
     }
 
     IEnumerator StaminaDrain()
@@ -145,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (stamina < maxStamina && stamina > 0)
             {
-                stamina -= 1.1f;
+                stamina -= 5f;
             }
             // if player move
             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
@@ -177,6 +190,10 @@ public class PlayerMovement : MonoBehaviour
             score = 0;
             scoreText.text = "score :" + score.ToString();
         }
+    }
+    public float getMaxStamina()
+    {
+        return maxStamina;
     }
 
     public float getStamina() 
@@ -210,6 +227,20 @@ public class PlayerMovement : MonoBehaviour
         StartCoroutine(PlayerBlink());
         StartCoroutine(InvincibleCoolDown());
     }
+
+    //---------- Initial Stamina and Max Stamina ----------//
+
+    public void SetStamina(float newStamina)
+    {
+        stamina = newStamina;
+    }
+
+    public void SetMaxStamina(float newMaxStamina)
+    {
+        maxStamina = newMaxStamina;
+    }
+
+    //---------- Initial Stamina and Max Stamina ----------//
 
     IEnumerator PlayerBlink() {
         while(isInvincible){
@@ -266,9 +297,43 @@ public class PlayerMovement : MonoBehaviour
                 Destroy(trashManager);
             }
 
+            //Penalty Stamina
+            float penaltyStamina = 20;
+            float staminaDecrease = PlayerPrefs.GetFloat("stamina");
+            PlayerPrefs.SetFloat("stamina", staminaDecrease - penaltyStamina);
+            
             SummaryReportController.AssignVariable(this.score, (int) Math.Round(this.maxStamina), this.junkLossed, (int) Math.Round((score*1)*0.5));
 
             SceneManager.LoadScene("Summary");
+        }
+    }
+
+    public void UpdatePlayerStat()
+    {
+        int shoesEquip = PlayerPrefs.GetInt("shoesEquip", 0);
+        switch (shoesEquip)
+        {
+            case 0:
+                speed = 5;
+                break;
+            case 1:
+                speed = 5 * 1.10f;
+                break;
+            case 2:
+                speed = 5 * 1.20f;
+                break;
+            case 3:
+                speed = 5 * 1.30f;
+                break;
+            default:
+                break;
+        }
+
+        GameObject magnetColliderObj = transform.GetChild(1).gameObject;
+        bool magnetBuyed = PlayerPrefs.GetInt("magnetBuyed", 0) == 1 ? true : false;
+        if (!magnetBuyed)
+        {
+            magnetColliderObj.SetActive(false);
         }
     }
 }

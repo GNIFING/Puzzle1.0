@@ -27,6 +27,8 @@ public class MenuController : MonoBehaviour
     {
         Debug.Log("Play Game");
         SceneManager.LoadScene("Level1");
+        //PlayerPrefs.SetFloat("maxStamina", 100);
+        //PlayerPrefs.SetFloat("stamina", 100);
     }
 
     public void EnterHome()
@@ -43,6 +45,7 @@ public class MenuController : MonoBehaviour
 
     public void EnterStore()
     {
+        store.GetComponent<StoreManager>().UpdateStoreButton();
         store.SetActive(true);
     }
 

@@ -6369,7 +6369,6 @@ MonoBehaviour:
   studyCourse1Buyed: 0
   studyCourse2Buyed: 0
   magnetBuyed: 0
-  magnetEquip: 0
 --- !u!4 &1135684993
 Transform:
   m_ObjectHideFlags: 0

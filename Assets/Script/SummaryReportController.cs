@@ -38,10 +38,17 @@ public class SummaryReportController : MonoBehaviour
 
     // if developer doesn't want to assign each params, u can call this function instead (but why?)
     public static void AssignVariable(int junkCol, int stamUsed, int junkL, int income) {
+        float turnRatePrice = PlayerPrefs.GetInt("studyCourse1Buyed") == 1 ? 1.5f : 1;
+        turnRatePrice = PlayerPrefs.GetInt("studyCourse2Buyed") == 1 ? 2f : turnRatePrice;
+
         junkCollected = junkCol;
         staminaUsed = stamUsed;
         junkLoss = junkL;
-        totalIncome = income;
+        totalIncome = (int)(income * turnRatePrice);
+
+        //Change Day here//
+        int today = PlayerPrefs.GetInt("day");
+        PlayerPrefs.SetInt("day", today + 1);
     }
 
     public void LoadMainMenu() {

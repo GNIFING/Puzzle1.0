@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     private float maxStamina = 100f;
-    private float stamina = 80f;
+    private float stamina = 100f;
     private int day = 0;
     private int moveSpeedLvl = 1;
     private int studyCourseLvl = 1;
@@ -23,12 +23,15 @@ public class GameController : MonoBehaviour
     public bool studyCourse2Buyed;
 
     public bool magnetBuyed;
-    public int magnetEquip;
 
     public void Start()
     {
         //ResetGame();
-        LoadGame();    
+        LoadGame();
+        PlayerPrefs.SetInt("money", 100);
+        //PlayerPrefs.SetInt("day", 1);
+
+        money = 100;
     }
 
     public void NextDay()
@@ -71,8 +74,8 @@ public class GameController : MonoBehaviour
         maxStamina = PlayerPrefs.GetFloat("maxStamina", 100f);
         stamina = PlayerPrefs.GetFloat("stamina", 100f);
         day = PlayerPrefs.GetInt("day", 1);
-        moveSpeedLvl = PlayerPrefs.GetInt("moveSpeedLvl", 1);
-        studyCourseLvl = PlayerPrefs.GetInt("studyCourseLvl", 1);
+        moveSpeedLvl = PlayerPrefs.GetInt("moveSpeedLvl", 0);
+        studyCourseLvl = PlayerPrefs.GetInt("studyCourseLvl", 0);
         money = PlayerPrefs.GetInt("money", 0);
 
         shoes1Buyed = PlayerPrefs.GetInt("shoes1Buyed", 0) == 1 ? true : false;
@@ -87,6 +90,27 @@ public class GameController : MonoBehaviour
 
         studyCourse1Buyed = PlayerPrefs.GetInt("studyCourse1Buyed", 0) == 1 ? true : false;
         studyCourse2Buyed = PlayerPrefs.GetInt("studyCourse2Buyed", 0) == 1 ? true : false;
+
+        //Check if it has key or not
+        PlayerPrefs.SetFloat("maxStamina", maxStamina);
+        PlayerPrefs.SetFloat("stamina", stamina);
+        PlayerPrefs.SetInt("day", day);
+        PlayerPrefs.SetInt("moveSpeedLvl", moveSpeedLvl);
+        PlayerPrefs.SetInt("studyCourseLvl", studyCourseLvl);
+        PlayerPrefs.SetInt("money", money);
+
+        PlayerPrefs.SetInt("shoes1Buyed", shoes1Buyed ? 1 : 0);
+        PlayerPrefs.SetInt("shoes2Buyed", shoes1Buyed ? 1 : 0);
+        PlayerPrefs.SetInt("shoes3Buyed", shoes1Buyed ? 1 : 0);
+        PlayerPrefs.SetInt("shoesEquip", shoesEquip);
+
+        PlayerPrefs.SetInt("magnetBuyed", magnetBuyed ? 1 : 0);
+
+        PlayerPrefs.SetInt("staminaBuff1Buyed", staminaBuff1Buyed ? 1 : 0);
+        PlayerPrefs.SetInt("staminaBuff2Buyed", staminaBuff2Buyed ? 1 : 0);
+
+        PlayerPrefs.SetInt("studyCourse1Buyed", studyCourse1Buyed ? 1 : 0);
+        PlayerPrefs.SetInt("studyCourse2Buyed", studyCourse2Buyed ? 1 : 0);
     }
 
     public void ResetGame()
@@ -94,8 +118,8 @@ public class GameController : MonoBehaviour
         PlayerPrefs.SetFloat("maxStamina", 100f);
         PlayerPrefs.SetFloat("stamina", 100f);
         PlayerPrefs.SetInt("day", 1);
-        PlayerPrefs.SetInt("moveSpeedLvl", 1);
-        PlayerPrefs.SetInt("studyCourseLvl", 1);
+        PlayerPrefs.SetInt("moveSpeedLvl", 0);
+        PlayerPrefs.SetInt("studyCourseLvl", 0);
         PlayerPrefs.SetInt("money", 0);
 
         PlayerPrefs.SetInt("shoes1Buyed", 0);
@@ -113,6 +137,7 @@ public class GameController : MonoBehaviour
 
         PlayerPrefs.Save();
     }
+
 
     public float MaxStamina { get { return maxStamina; } set { maxStamina = value; } }
     public float Stamina { get { return stamina; } set { stamina = value; } }

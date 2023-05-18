@@ -13,17 +13,19 @@ public class NextLevelDoor : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            float maxStamina = collision.gameObject.GetComponent<PlayerMovement>().getMaxStamina();
             float stamina = collision.gameObject.GetComponent<PlayerMovement>().getStamina();
             int usedStamina = collision.gameObject.GetComponent<PlayerMovement>().getUsedStamina();
             int score = collision.gameObject.GetComponent<PlayerMovement>().getScore();
             int junkLossed = collision.gameObject.GetComponent<PlayerMovement>().getJunkLossed();
-            StartCoroutine(LoadLevel(stamina, usedStamina, score, junkLossed));
+            StartCoroutine(LoadLevel(maxStamina, stamina, usedStamina, score, junkLossed));
         }
     }
 
-    IEnumerator LoadLevel(float stamina, int usedStamina, int score, int junkLossed)
+    IEnumerator LoadLevel(float maxStamina, float stamina, int usedStamina, int score, int junkLossed)
     {
         if(sceneToLoad == "Summary"){
+            PlayerPrefs.DeleteKey("inGameMaxStamina");
             PlayerPrefs.DeleteKey("inGameStamina");
             PlayerPrefs.DeleteKey("inGameScore");
             PlayerPrefs.DeleteKey("inGameJunkLossed");
@@ -41,6 +43,7 @@ public class NextLevelDoor : MonoBehaviour
             SummaryReportController.AssignVariable(score, usedStamina, junkLossed, score*1);
 
         } else {
+            PlayerPrefs.SetFloat("inGameMaxStamina", maxStamina);
             PlayerPrefs.SetFloat("inGameStamina", stamina);
             PlayerPrefs.SetInt("inGameScore", score);
             PlayerPrefs.SetInt("inGameJunkLossed", junkLossed);

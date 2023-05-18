@@ -34,6 +34,12 @@ public class HospitalManager : MonoBehaviour
         {
             gameController.Stamina = gameController.MaxStamina;
             gameController.Money -= healCost;
+
+            float maxStamina = PlayerPrefs.GetFloat("maxStamina");
+            PlayerPrefs.SetFloat("stamina", maxStamina);
+            int money = PlayerPrefs.GetInt("money");
+            PlayerPrefs.SetInt("money", money - healCost);
+
             moneyMenuText.text = gameController.Money.ToString();
             healText.text = "Your stamina is full";
             UpdateHospital();
