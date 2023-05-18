@@ -572,7 +572,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1372325997}
         m_TargetAssemblyTypeName: StoryDialogue, Assembly-CSharp
-        m_MethodName: ToMainMenu
+        m_MethodName: ToCreditScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
