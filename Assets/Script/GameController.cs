@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
 {
     private float maxStamina = 100f;
     private float stamina = 100f;
-    private int day = 0;
+    private int day = 1;
     private int moveSpeedLvl = 1;
     private int studyCourseLvl = 1;
     private int money = 0;
@@ -25,10 +25,19 @@ public class GameController : MonoBehaviour
 
     public bool magnetBuyed;
 
+    public bool alreadyDisplay;
+
     public void Start()
     {
         //ResetGame();
-        LoadGame();    
+        LoadGame();
+        Debug.Log("Day = " + day);
+        if (day == 4 && !alreadyDisplay)
+        {
+            SceneManager.LoadScene("DialogueTest");
+            alreadyDisplay = true;
+            PlayerPrefs.SetInt("alreadyDisplay", 1);
+        }
     }
 
     public void NextDay()
@@ -66,6 +75,8 @@ public class GameController : MonoBehaviour
         PlayerPrefs.SetInt("studyCourse1Buyed", studyCourse1Buyed ? 1 : 0);
         PlayerPrefs.SetInt("studyCourse2Buyed", studyCourse2Buyed ? 1 : 0);
 
+        PlayerPrefs.SetInt("alreadyDisplay", alreadyDisplay ? 1 : 0);
+
         PlayerPrefs.Save();
     }
 
@@ -91,6 +102,8 @@ public class GameController : MonoBehaviour
         studyCourse1Buyed = PlayerPrefs.GetInt("studyCourse1Buyed", 0) == 1 ? true : false;
         studyCourse2Buyed = PlayerPrefs.GetInt("studyCourse2Buyed", 0) == 1 ? true : false;
 
+        alreadyDisplay = PlayerPrefs.GetInt("alreadyDisplay", 0) == 1 ? true : false;
+
         //Check if it has key or not
         PlayerPrefs.SetFloat("maxStamina", maxStamina);
         PlayerPrefs.SetFloat("stamina", stamina);
@@ -111,6 +124,9 @@ public class GameController : MonoBehaviour
 
         PlayerPrefs.SetInt("studyCourse1Buyed", studyCourse1Buyed ? 1 : 0);
         PlayerPrefs.SetInt("studyCourse2Buyed", studyCourse2Buyed ? 1 : 0);
+
+        PlayerPrefs.SetInt("alreadyDisplay", alreadyDisplay ? 1 : 0);
+
     }
 
     public void ResetGame()
@@ -134,6 +150,9 @@ public class GameController : MonoBehaviour
 
         PlayerPrefs.SetInt("studyCourse1Buyed", 0);
         PlayerPrefs.SetInt("studyCourse2Buyed", 0);
+
+        PlayerPrefs.SetInt("alreadyDisplay", 0);
+
 
         PlayerPrefs.Save();
     }

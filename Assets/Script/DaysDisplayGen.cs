@@ -14,13 +14,15 @@ public class DaysDisplayGen : MonoBehaviour
     private TextMeshProUGUI textComponent;
     private float startTime;
 
+    public GameController gameController;
+
     // Start is called before the first frame update
     void Start()
     {
         Transform childTransform = transform.Find("Text");
         startTime = Time.time;
         textComponent = childTransform.GetComponent<TextMeshProUGUI>();
-        textComponent.text = word;
+        textComponent.text = "Day " + PlayerPrefs.GetInt("day");
 
         blackBackground = GetComponent<Image>();
 
