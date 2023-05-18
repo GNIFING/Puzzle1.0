@@ -15046,7 +15046,7 @@ GameObject:
   - component: {fileID: 1300580701}
   - component: {fileID: 1300580700}
   - component: {fileID: 1300580699}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: Obs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
