@@ -72,8 +72,8 @@ public class MenuController : MonoBehaviour
 
     public void EnterStore()
     {
-        store.GetComponent<StoreManager>().UpdateStoreButton();
         store.SetActive(true);
+        store.GetComponent<StoreManager>().UpdateStoreButton();
     }
 
     public void ExitHome()

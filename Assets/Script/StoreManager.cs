@@ -191,6 +191,7 @@ public class StoreManager : MonoBehaviour
         if (gameController.shoes2Buyed  )
         {
             buyButton[1].SetActive(false);
+            Debug.Log("Shoes2Buyed");
         }
         if (gameController.shoes3Buyed)
         {
