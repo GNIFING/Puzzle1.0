@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
         if(PlayerPrefs.HasKey("inGameLastLevel")){
             int lastLevelIndex = PlayerPrefs.GetInt("inGameLastLevel");
             int thisLevelIndex = SceneManager.GetActiveScene().buildIndex;
-            if (lastLevelIndex - thisLevelIndex == -1){
+            if (lastLevelIndex < thisLevelIndex){
                 transform.position = entryFromPrevScene;
             } else {
                 transform.position = entryFromNextScene;
