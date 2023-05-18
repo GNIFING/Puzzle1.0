@@ -74,4 +74,9 @@ public class StoryDialogue : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void ToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenuForReal");
+    }
 }
