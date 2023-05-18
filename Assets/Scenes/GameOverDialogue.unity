@@ -497,7 +497,6 @@ GameObject:
   - component: {fileID: 1798875727}
   - component: {fileID: 1798875726}
   - component: {fileID: 1798875725}
-  - component: {fileID: 1798875724}
   - component: {fileID: 1798875723}
   m_Layer: 5
   m_Name: Button
@@ -623,21 +622,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1798875724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798875721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1db318308f5f44b7be33add3a798057, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  input: 
-  delay: 0
-  sound: {fileID: 0}
 --- !u!114 &1798875725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,7 +666,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1798875724}
+      - m_Target: {fileID: 1842178614}
         m_TargetAssemblyTypeName: StoryDialogue, Assembly-CSharp
         m_MethodName: ToMainMenu
         m_Mode: 1
@@ -1021,6 +1005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1db318308f5f44b7be33add3a798057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textHolder: {fileID: 0}
   input: "\u0E40\u0E2A\u0E35\u0E22\u0E43\u0E08\u0E14\u0E49\u0E27\u0E22\u0E22 \u0E19\u0E23\u0E2A\u0E34\u0E07\u0E2B\u0E4C\u0E2B\u0E32\u0E40\u0E07\u0E34\u0E19\u0E21\u0E32\u0E43\u0E0A\u0E49\u0E2B\u0E19\u0E35\u0E49\u0E44\u0E14\u0E49\u0E44\u0E21\u0E48\u0E17\u0E31\u0E19\u0E40\u0E27\u0E25\u0E32\u0E17\u0E33\u0E43\u0E2B\u0E49\u0E40\u0E02\u0E32\u0E1E\u0E1A\u0E01\u0E31\u0E1A\u0E08\u0E38\u0E14\u0E08\u0E1A\u0E2D\u0E31\u0E19\u0E19\u0E48\u0E32\u0E40\u0E28\u0E23\u0E49\u0E32
     \u0E41\u0E15\u0E48\u0E22\u0E31\u0E07\u0E44\u0E07\u0E01\u0E47\u0E15\u0E32\u0E21\u0E42\u0E2D\u0E01\u0E32\u0E28\u0E02\u0E2D\u0E07\u0E19\u0E23\u0E2A\u0E34\u0E07\u0E2B\u0E4C\u0E22\u0E31\u0E07\u0E44\u0E21\u0E48\u0E2B\u0E21\u0E14\u0E41\u0E04\u0E48\u0E19\u0E35\u0E49
     \u0E21\u0E32\u0E25\u0E2D\u0E07\u0E14\u0E39\u0E2D\u0E35\u0E01\u0E01\u0E31\u0E19\u0E2A\u0E31\u0E01\u0E17\u0E35\u0E43\u0E19\u0E04\u0E23\u0E31\u0E49\u0E07\u0E2B\u0E19\u0E49\u0E32\u0E32!!"

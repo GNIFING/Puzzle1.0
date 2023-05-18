@@ -158,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (stamina < maxStamina && stamina > 0)
             {
-                stamina -= 5f;
+                stamina -= 1f;
             }
             // if player move
             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)

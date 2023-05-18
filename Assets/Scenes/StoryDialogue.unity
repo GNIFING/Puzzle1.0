@@ -756,7 +756,6 @@ GameObject:
   - component: {fileID: 949112611}
   - component: {fileID: 949112610}
   - component: {fileID: 949112609}
-  - component: {fileID: 949112612}
   - component: {fileID: 949112613}
   m_Layer: 5
   m_Name: Button
@@ -830,7 +829,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 949112612}
+      - m_Target: {fileID: 29682348}
         m_TargetAssemblyTypeName: StoryDialogue, Assembly-CSharp
         m_MethodName: NextScene
         m_Mode: 1
@@ -880,22 +879,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949112607}
   m_CullTransparentMesh: 1
---- !u!114 &949112612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 949112607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1db318308f5f44b7be33add3a798057, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textHolder: {fileID: 0}
-  input: 
-  delay: 0
-  sound: {fileID: 0}
 --- !u!82 &949112613
 AudioSource:
   m_ObjectHideFlags: 0

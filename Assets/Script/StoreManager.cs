@@ -207,7 +207,7 @@ public class StoreManager : MonoBehaviour
         {
             buyButton[4].SetActive(false);
         }
-        if (gameController.staminaBuff1Buyed)
+        if (gameController.staminaBuff2Buyed)
         {
             buyButton[5].SetActive(false);
         }
@@ -215,7 +215,7 @@ public class StoreManager : MonoBehaviour
         {
             buyButton[6].SetActive(false);
         }
-        if (gameController.studyCourse1Buyed)
+        if (gameController.studyCourse2Buyed)
         {
             buyButton[7].SetActive(false);
         }

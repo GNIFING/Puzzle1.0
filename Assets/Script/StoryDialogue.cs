@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(AudioSource))]
 public class StoryDialogue : MonoBehaviour
 {
-    private TextMeshProUGUI textHolder;
+    public TextMeshProUGUI textHolder;
     private IEnumerator lineAppear;
     private bool finished = false;
     AudioSource source;
@@ -24,12 +24,12 @@ public class StoryDialogue : MonoBehaviour
     
 
     private void Awake() {
-        textHolder = GetComponent<TextMeshProUGUI>(); 
+        textHolder = GetComponent<TextMeshProUGUI>();
         textHolder.text = "";
-        
+
         source = GetComponent<AudioSource>();
     }
-    
+
     private void OnEnable() {
         ResetLine();
         lineAppear = WriteText(input, textHolder, delay, sound);

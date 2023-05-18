@@ -11,7 +11,7 @@ public class GameOverController : GameController
     [SerializeField] private TextMeshProUGUI textHolder;
 
     private void OnEnable() {
-        day = PlayerPrefs.GetInt("day", 1);
+        int day = PlayerPrefs.GetInt("day", 1);
         textHolder.text = "Day Survive: " + day.ToString();
     }
 
