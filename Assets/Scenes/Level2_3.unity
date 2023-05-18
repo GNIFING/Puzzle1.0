@@ -314,7 +314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7215668658300937306, guid: 2235a6cb549e341bd9999354a414cdce, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2235a6cb549e341bd9999354a414cdce, type: 3}
@@ -7918,7 +7918,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d0452d4b17646e38a8cf2e27af9a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenesAvailable: []
+  scenesAvailable:
+  - Level1
+  - Level1_2
   transition: {fileID: 132610189}
   transitionTime: 0
 --- !u!114 &497305418
@@ -10564,7 +10566,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d0452d4b17646e38a8cf2e27af9a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenesAvailable: []
+  scenesAvailable:
+  - Level3
   transition: {fileID: 132610189}
   transitionTime: 0
 --- !u!114 &1183762769

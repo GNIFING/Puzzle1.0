@@ -10919,6 +10919,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenesAvailable:
   - Level2
+  - Level2_3
+  - Level2_4
   transition: {fileID: 48516056}
   transitionTime: 0
 --- !u!1 &1679860815
