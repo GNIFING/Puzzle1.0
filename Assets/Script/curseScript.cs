@@ -145,9 +145,10 @@ public class curseScript : MonoBehaviour
         // spawn enemy type 60/20/20
         int rand = Random.Range(0, 100);
         Vector3 spawnPosition = GetRandomNavMeshPosition(true);
+        spawnedPositions.Add(spawnPosition);
+
         Vector3 spotTwo = GetRandomNavMeshPosition(true);
 
-        spawnedPositions.Add(spawnPosition);
         spawnedPositions.Add(spotTwo);
 
         bool isChester = false;
@@ -156,21 +157,25 @@ public class curseScript : MonoBehaviour
         {
             // spawn enemy
             enemyObj = Instantiate(enemies[0], spawnPosition, Quaternion.identity);
+            Debug.Log("Gu Spawn wei");
         }
         else if (rand < 80 - 2 * hardIndicator)
         {
             // spawn enemy
             enemyObj = Instantiate(enemies[1], spawnPosition, Quaternion.identity);
+            Debug.Log("Gu Spawn wei");
         }
         else if (rand > 95 - hardIndicator/2){
             // spawn enemy
             enemyObj = Instantiate(enemies[3], spawnPosition, Quaternion.identity);
             isChester = true;
+            Debug.Log("Gu Spawn wei");
         }
         else 
         {
             // spawn enemy
             enemyObj = Instantiate(enemies[2], spawnPosition, Quaternion.identity);
+            Debug.Log("Gu Spawn wei");
         }
 
         Color originalColor = enemyObj.GetComponent<SpriteRenderer>().color;
