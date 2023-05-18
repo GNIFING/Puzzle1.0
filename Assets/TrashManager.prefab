@@ -129,6 +129,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3911319583059790374, guid: 1932550e28a6f4f42a85e65f30c8c1ff, type: 3}
+      propertyPath: playTrashSound
+      value: 
+      objectReference: {fileID: 1407868225705104263}
     - target: {fileID: 3911319583059790375, guid: 1932550e28a6f4f42a85e65f30c8c1ff, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1.19
@@ -143,6 +147,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1932550e28a6f4f42a85e65f30c8c1ff, type: 3}
+--- !u!82 &1407868225705104263 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3675193047106690801, guid: 1932550e28a6f4f42a85e65f30c8c1ff, type: 3}
+  m_PrefabInstance: {fileID: 2344449248830016886}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1643501995966793552 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3911319583059790374, guid: 1932550e28a6f4f42a85e65f30c8c1ff, type: 3}

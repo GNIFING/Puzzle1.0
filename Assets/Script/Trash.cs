@@ -26,6 +26,8 @@ public class Trash : MonoBehaviour
     public Sprite[] spriteArray;
     private SpriteRenderer spriteRenderer;
 
+    [SerializeField] private AudioSource playTrashSound;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -45,8 +47,12 @@ public class Trash : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            playTrashSound = gameObject.GetComponent<AudioSource>();
+            playTrashSound.Play();
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
             collision.gameObject.GetComponent<PlayerMovement>().AddScore(score);
-            Destroy(this.transform.parent.gameObject);
+            Destroy(this.transform.parent.gameObject, 1f);
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {
