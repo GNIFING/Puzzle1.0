@@ -6,6 +6,7 @@ public class SpecialItemButton : MonoBehaviour
 {
     public GameObject textPanel;
     public GameObject parentObject;
+    public PlayerMovement player;
 
     public void ClosePanel()
     {
@@ -13,6 +14,7 @@ public class SpecialItemButton : MonoBehaviour
         {
             textPanel.SetActive(false);
             Time.timeScale = 1;
+            player.AddScore(20);
             Destroy(parentObject);
         }
     }

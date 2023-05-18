@@ -93,6 +93,7 @@ public class MenuController : MonoBehaviour
 
     private void clearGameData()
     {
+        PlayerPrefs.DeleteKey("level_0_tutorial_played");
         PlayerPrefs.DeleteKey("level_1_tutorial_played");
         PlayerPrefs.DeleteKey("level_2_tutorial_played");
         PlayerPrefs.DeleteKey("level_3_tutorial_played");
