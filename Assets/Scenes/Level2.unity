@@ -11086,7 +11086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7215668658300937309, guid: 44391edcb039f42dbaab380d87e452f1, type: 3}
       propertyPath: spotTwo.x
-      value: 15
+      value: 15.5
       objectReference: {fileID: 0}
     - target: {fileID: 7215668658300937309, guid: 44391edcb039f42dbaab380d87e452f1, type: 3}
       propertyPath: spotTwo.y
