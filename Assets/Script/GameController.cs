@@ -29,8 +29,6 @@ public class GameController : MonoBehaviour
 
     public void Start()
     {
-        PlayerPrefs.SetInt("money", 1000);
-        money = 1000;
         //ResetGame();
         LoadGame();
         Debug.Log("Day = " + day);
@@ -161,6 +159,7 @@ public class GameController : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    
 
     public float MaxStamina { get { return maxStamina; } set { maxStamina = value; } }
     public float Stamina { get { return stamina; } set { stamina = value; } }
