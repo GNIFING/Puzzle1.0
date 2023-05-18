@@ -29,7 +29,7 @@ public class curseScript : MonoBehaviour
     // spawn manager
     private List<Vector3> spawnedPositions = new List<Vector3>();
     private const float minDistanceThreshold = 2f; // Minimum distance between positions
-
+    public Material material;
 
     // navmesh
     public GameObject navMesh;
@@ -150,17 +150,24 @@ public class curseScript : MonoBehaviour
         spawnedPositions.Add(spawnPosition);
         spawnedPositions.Add(spotTwo);
 
-        if (rand < 80 - 4 * hardIndicator)
+        bool isChester = false;
+
+        if (rand < 70 - 2*hardIndicator)
         {
             // spawn enemy
             enemyObj = Instantiate(enemies[0], spawnPosition, Quaternion.identity);
         }
-        else if (rand < 90 - 2 * hardIndicator)
+        else if (rand < 80 - 2 * hardIndicator)
         {
             // spawn enemy
             enemyObj = Instantiate(enemies[1], spawnPosition, Quaternion.identity);
         }
-        else
+        else if (rand > 95 - hardIndicator/2){
+            // spawn enemy
+            enemyObj = Instantiate(enemies[3], spawnPosition, Quaternion.identity);
+            isChester = true;
+        }
+        else 
         {
             // spawn enemy
             enemyObj = Instantiate(enemies[2], spawnPosition, Quaternion.identity);
@@ -172,15 +179,21 @@ public class curseScript : MonoBehaviour
         enemyObj.GetComponent<EnemyController>().spotOne = spawnPosition;
         enemyObj.GetComponent<EnemyController>().spotTwo = spotTwo;
 
+        if (!isChester){
+            // add FieldOfView MeshRenderer
+            GameObject view = enemyObj.transform.GetChild(0).gameObject;
+            MeshRenderer meshRenderer = view.AddComponent<MeshRenderer>();
+            meshRenderer.material = material;
+        }
 
         // make enemy faster-slower
         int rand2 = Random.Range(0, 100);
-        if (rand2 < 10 - hardIndicator) // make enemy slower
+        if (rand2 < 10 - hardIndicator && !isChester) // make enemy slower
         {
             enemyObj.GetComponent<EnemyController>().speed = 0.5f;
             brightness += 0.5f;
         }
-        if (rand2 < 20 - hardIndicator)
+        if (rand2 < 20 - hardIndicator  && !isChester)
         {
             enemyObj.GetComponent<EnemyController>().speed = 1.0f;
             brightness += 0.2f;
@@ -202,7 +215,7 @@ public class curseScript : MonoBehaviour
 
         // make enemy stronger-weaker
         int rand3 = Random.Range(0, 100);
-        if (rand3 < 20 + 4*hardIndicator) // make enemy stronger
+        if (rand3 < 20 + 4*hardIndicator ) // make enemy stronger
         {
             enemyObj.GetComponent<EnemyController>().damage = enemyObj.GetComponent<EnemyController>().damage*2;
             brightness -= 0.2f;
