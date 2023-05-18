@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4d1f47265f3e437f9d7eb253a02b189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1.5
   rigidbody2d: {fileID: 0}
   time: 0
   movement: {x: 0, y: 0}
