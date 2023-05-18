@@ -7142,7 +7142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d0452d4b17646e38a8cf2e27af9a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Summary
+  scenesAvailable:
+  - Summary
   transition: {fileID: 48516056}
   transitionTime: 0
 --- !u!114 &1416730404
@@ -10916,7 +10917,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d0452d4b17646e38a8cf2e27af9a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Level2
+  scenesAvailable:
+  - Level2
   transition: {fileID: 48516056}
   transitionTime: 0
 --- !u!1 &1679860815

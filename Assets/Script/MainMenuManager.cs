@@ -27,6 +27,12 @@ public class MainMenuManager : MonoBehaviour
         PlayerPrefs.DeleteKey("Level2_isVisited");
         PlayerPrefs.DeleteKey("Level3_isVisited");
         PlayerPrefs.DeleteKey("Level4_isVisited");
+        PlayerPrefs.DeleteKey("Level1_2_isVisited");
+        PlayerPrefs.DeleteKey("Level1_3_isVisited");
+        PlayerPrefs.DeleteKey("Level2_2_isVisited");
+        PlayerPrefs.DeleteKey("Level2_3_isVisited");
+        PlayerPrefs.DeleteKey("Level3_2_isVisited");
+        PlayerPrefs.DeleteKey("Level3_3_isVisited");
     }
 
     private void clearGameData()

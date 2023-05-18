@@ -30,7 +30,13 @@ public class MenuController : MonoBehaviour
     {
         Debug.Log("Play Game");
         clearInGameState();
-        SceneManager.LoadScene("Level1");
+
+        string[] scenesAvailable = new string[]{"Level1", "Level1_2"};
+        int rdnInt = Random.Range(0, scenesAvailable.Length);
+        string randomScene = scenesAvailable[rdnInt];
+        Debug.Log(randomScene);
+
+        SceneManager.LoadScene(randomScene);
         //PlayerPrefs.SetFloat("maxStamina", 100);
         //PlayerPrefs.SetFloat("stamina", 100);
     }
@@ -92,6 +98,12 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.DeleteKey("Level2_isVisited");
         PlayerPrefs.DeleteKey("Level3_isVisited");
         PlayerPrefs.DeleteKey("Level4_isVisited");
+        PlayerPrefs.DeleteKey("Level1_2_isVisited");
+        PlayerPrefs.DeleteKey("Level1_3_isVisited");
+        PlayerPrefs.DeleteKey("Level2_2_isVisited");
+        PlayerPrefs.DeleteKey("Level2_3_isVisited");
+        PlayerPrefs.DeleteKey("Level3_2_isVisited");
+        PlayerPrefs.DeleteKey("Level3_3_isVisited");
     }
 
     private void clearGameData()
