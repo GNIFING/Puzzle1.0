@@ -12003,7 +12003,7 @@ MonoBehaviour:
   thankYouText: {fileID: 2066055373}
   billButton: {fileID: 172272533}
   payObject: {fileID: 1917287496}
-  billPriceEachDay: 1e0000003c00000064000000
+  billPriceEachDay: 140000003c00000064000000
   isPayFirstBill: 0
   isPaySecondBill: 0
   isPayThirdBill: 0
@@ -14130,6 +14130,10 @@ PrefabInstance:
     - target: {fileID: 4700960402236238203, guid: 16feb5de9cca8334f89c5d27e0065f48, type: 3}
       propertyPath: m_Name
       value: DaysDisplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700960402236238207, guid: 16feb5de9cca8334f89c5d27e0065f48, type: 3}
+      propertyPath: fadeInDuration
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4700960402236238207, guid: 16feb5de9cca8334f89c5d27e0065f48, type: 3}
       propertyPath: gameController

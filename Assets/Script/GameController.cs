@@ -29,6 +29,8 @@ public class GameController : MonoBehaviour
 
     public void Start()
     {
+        PlayerPrefs.SetInt("money", 1000);
+        money = 1000;
         //ResetGame();
         LoadGame();
         Debug.Log("Day = " + day);
@@ -63,8 +65,8 @@ public class GameController : MonoBehaviour
         PlayerPrefs.SetInt("money", money);
 
         PlayerPrefs.SetInt("shoes1Buyed", shoes1Buyed ? 1 : 0);
-        PlayerPrefs.SetInt("shoes2Buyed", shoes1Buyed ? 1 : 0);
-        PlayerPrefs.SetInt("shoes3Buyed", shoes1Buyed ? 1 : 0);
+        PlayerPrefs.SetInt("shoes2Buyed", shoes2Buyed ? 1 : 0);
+        PlayerPrefs.SetInt("shoes3Buyed", shoes3Buyed ? 1 : 0);
         PlayerPrefs.SetInt("shoesEquip", shoesEquip);
 
         PlayerPrefs.SetInt("magnetBuyed", magnetBuyed ? 1 : 0);
@@ -113,8 +115,8 @@ public class GameController : MonoBehaviour
         PlayerPrefs.SetInt("money", money);
 
         PlayerPrefs.SetInt("shoes1Buyed", shoes1Buyed ? 1 : 0);
-        PlayerPrefs.SetInt("shoes2Buyed", shoes1Buyed ? 1 : 0);
-        PlayerPrefs.SetInt("shoes3Buyed", shoes1Buyed ? 1 : 0);
+        PlayerPrefs.SetInt("shoes2Buyed", shoes2Buyed ? 1 : 0);
+        PlayerPrefs.SetInt("shoes3Buyed", shoes3Buyed ? 1 : 0);
         PlayerPrefs.SetInt("shoesEquip", shoesEquip);
 
         PlayerPrefs.SetInt("magnetBuyed", magnetBuyed ? 1 : 0);
