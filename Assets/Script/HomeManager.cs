@@ -53,7 +53,7 @@ public class HomeManager : MonoBehaviour
         {
             int remainingDay = 3 - day;
             ShowDueDate(remainingDay, 1);
-            billPrice.text = 30.ToString();
+            billPrice.text = 20.ToString();
         }
         else if (!isPaySecondBill)
         {
@@ -95,8 +95,8 @@ public class HomeManager : MonoBehaviour
             thankYouText.SetActive(true);
 
             int saveMoney = PlayerPrefs.GetInt("money");
-            PlayerPrefs.SetInt("money", saveMoney - 30);
-            gameController.Money -= 30;
+            PlayerPrefs.SetInt("money", saveMoney - 20);
+            gameController.Money -= 20;
 
             moneyText.text = "Money : " + gameController.Money.ToString();
             moneyInMenuText.text = gameController.Money.ToString();

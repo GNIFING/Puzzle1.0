@@ -48,6 +48,7 @@ public class StoreManager : MonoBehaviour
         {
             case 1:
                 gameController.shoesEquip = 1;
+                gameController.MoveSpeedLvl = 1;
                 PlayerPrefs.SetInt("shoesEquip", 1);
                 PlayerPrefs.SetInt("moveSpeedLvl", 1);
                 equipButton[0].SetActive(false);
@@ -56,6 +57,7 @@ public class StoreManager : MonoBehaviour
                 break;
             case 2:
                 gameController.shoesEquip = 2;
+                gameController.MoveSpeedLvl = 2;
                 PlayerPrefs.SetInt("shoesEquip", 2);
                 PlayerPrefs.SetInt("moveSpeedLvl", 2);
                 equipButton[0].SetActive(true);
@@ -64,6 +66,7 @@ public class StoreManager : MonoBehaviour
                 break;
             case 3:
                 gameController.shoesEquip = 3;
+                gameController.MoveSpeedLvl = 3;
                 PlayerPrefs.SetInt("shoesEquip", 3);
                 PlayerPrefs.SetInt("moveSpeedLvl", 3);
                 equipButton[0].SetActive(true);
@@ -164,6 +167,14 @@ public class StoreManager : MonoBehaviour
             PayMoney(50);
             buyButton[6].SetActive(false);
             gameController.studyCourse1Buyed = true;
+            if (gameController.studyCourse2Buyed)
+            {
+                gameController.StudyCourseLvl = 2;
+            }
+            else
+            {
+                gameController.StudyCourseLvl = 1;
+            }
             PlayerPrefs.SetInt("studyCourse1Buyed", 1);
         }
         else if (studyCourseNumber == 2 && gameController.Money >= 100)
@@ -171,6 +182,7 @@ public class StoreManager : MonoBehaviour
             PayMoney(100);
             buyButton[7].SetActive(false);
             gameController.studyCourse2Buyed = true;
+            gameController.StudyCourseLvl = 2;
             PlayerPrefs.SetInt("studyCourse2Buyed", 1);
         }
         moneyText.text = gameController.Money.ToString();

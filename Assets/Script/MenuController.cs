@@ -103,7 +103,7 @@ public class MenuController : MonoBehaviour
         Debug.Log("Game over!");
         clearInGameState();
         clearGameData();
-        SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("GameOverDialogue");
     }
 
     private void clearInGameState()
