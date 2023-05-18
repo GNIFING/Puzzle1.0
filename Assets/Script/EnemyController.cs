@@ -94,14 +94,15 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Knock a player back
-            Vector3 force = collision.collider.transform.position - collision.otherCollider.transform.position;
-            force.z = 0;
-            force.Normalize();
-            collision.gameObject.GetComponent<PlayerMovement>().KnockBack(force * 5);
-
             bool isInvincible = collision.gameObject.GetComponent<PlayerMovement>().getIsInvincible();
+
             if(!isInvincible){
+                // Knock a player back
+                Vector3 force = collision.collider.transform.position - collision.otherCollider.transform.position;
+                force.z = 0;
+                force.Normalize();
+                collision.gameObject.GetComponent<PlayerMovement>().KnockBack(force * 5);
+
                 collision.gameObject.GetComponent<PlayerMovement>().MinusScore(damage);
                 collision.gameObject.GetComponent<PlayerMovement>().setInvincible();
             } else {
