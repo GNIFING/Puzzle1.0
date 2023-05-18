@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 9e1eeb9ee4805024c97bbfd0f5446936
   - enabled: 1
-    path: Assets/Scenes/MainGame.unity
+    path: Assets/Scenes/MainMenuForReal.unity
     guid: 96401b2dea3161a4689b59679dae49a5
   - enabled: 1
     path: Assets/Scenes/Summary.unity
@@ -24,9 +24,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Level3.unity
     guid: 89d0649a79f834ba5a588914d6bf2086
   - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: 13e5238c7715818408891feaee5664fb
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/LevelT_T.unity
-    guid: 13e5238c7715818408891feaee5664fb
+    path: Assets/Scenes/GameOver.unity
+    guid: 8ccccf4e9f1d3f24d937734d82cc78af
+  - enabled: 1
+    path: Assets/Scenes/DialogueTest.unity
+    guid: 4ff8281c45a6f7b4dbc80eac8990c3cb
+  - enabled: 1
+    path: Assets/Scenes/StoryDialogue.unity
+    guid: 291482ecfa69e4609912de8f7207813d
   m_configObjects: {}

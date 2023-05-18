@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -27,11 +28,7 @@ public class GameController : MonoBehaviour
     public void Start()
     {
         //ResetGame();
-        LoadGame();
-        PlayerPrefs.SetInt("money", 100);
-        //PlayerPrefs.SetInt("day", 1);
-
-        money = 100;
+        LoadGame();    
     }
 
     public void NextDay()
@@ -42,6 +39,9 @@ public class GameController : MonoBehaviour
             PlayerPrefs.SetInt("day", day);
         }
         SaveGame();
+        if (day == 4) {
+            SceneManager.LoadScene("DialogueTest");
+        }
     }
 
     public void SaveGame()

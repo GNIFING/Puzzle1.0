@@ -79,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 21ae12909dfa64464820da55fc494021, type: 3}
-  m_Color: {r: 0.0014239977, g: 0.3018868, b: 0.12569991, a: 1}
+  m_Sprite: {fileID: -1124375097, guid: 4d8f3ea146e4294488504e1ec793e1f9, type: 3}
+  m_Color: {r: 0.6929844, g: 1, b: 0.6289308, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -103,9 +103,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.6566391}
-  m_Size: {x: 1, y: 1.4138565}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0.5}
+  m_Size: {x: 1.58, y: 1}
+  m_Direction: 1
 --- !u!50 &7215668658300937308
 Rigidbody2D:
   serializedVersion: 4
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fd4e6569c3a7b8e47ae32c1d84f9cbcf, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -146,7 +146,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.1
-  m_BaseOffset: 1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!95 &9133727068577419495

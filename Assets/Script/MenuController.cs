@@ -14,7 +14,10 @@ public class MenuController : MonoBehaviour
     private GameObject store;
     [SerializeField]
     private GameController gameController;
-    
+    [SerializeField]
+    private GameObject dialogueHolder;
+    private int day;
+
     public TextMeshProUGUI money;
 
 
@@ -26,6 +29,7 @@ public class MenuController : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("Play Game");
+        clearInGameState();
         SceneManager.LoadScene("Level1");
         //PlayerPrefs.SetFloat("maxStamina", 100);
         //PlayerPrefs.SetFloat("stamina", 100);
@@ -69,4 +73,42 @@ public class MenuController : MonoBehaviour
         Debug.Log("Summary!");
         SceneManager.LoadScene("Summary");
     }
+
+    public void Suicide()
+    {
+        Debug.Log("Game over!");
+        clearInGameState();
+        clearGameData();
+        SceneManager.LoadScene("GameOver");
+    }
+
+    private void clearInGameState()
+    {
+        PlayerPrefs.DeleteKey("inGameStamina");
+        PlayerPrefs.DeleteKey("inGameScore");
+        PlayerPrefs.DeleteKey("inGameJunkLossed");
+        PlayerPrefs.DeleteKey("inGameLastLevel");
+        PlayerPrefs.DeleteKey("Level1_isVisited");
+        PlayerPrefs.DeleteKey("Level2_isVisited");
+        PlayerPrefs.DeleteKey("Level3_isVisited");
+        PlayerPrefs.DeleteKey("Level4_isVisited");
+    }
+
+    private void clearGameData()
+    {
+        PlayerPrefs.DeleteKey("level_0_tutorial_played");
+        PlayerPrefs.DeleteKey("level_1_tutorial_played");
+        PlayerPrefs.DeleteKey("level_2_tutorial_played");
+        PlayerPrefs.DeleteKey("level_3_tutorial_played");
+        PlayerPrefs.DeleteKey("level_4_tutorial_played");
+        PlayerPrefs.DeleteKey("specialItemFound");
+    }
+
+    // public void NextDay () {
+    //     day = PlayerPrefs.GetInt("day", 1);
+    //     Debug.Log(day);
+    //     if (day == 4) {
+    //         SceneManager.LoadScene("DialogueTest");
+    //     }
+    // }
 }

@@ -79,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 21ae12909dfa64464820da55fc494021, type: 3}
-  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_Sprite: {fileID: 1530952969, guid: b26e0204a9834a94cb998a19310ff123, type: 3}
+  m_Color: {r: 0.7421383, g: 0.7421383, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -103,9 +103,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.6566391}
-  m_Size: {x: 1, y: 1.4138565}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0.5}
+  m_Size: {x: 1.56, y: 1}
+  m_Direction: 1
 --- !u!50 &7215668658300937308
 Rigidbody2D:
   serializedVersion: 4
@@ -146,7 +146,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.1
-  m_BaseOffset: 1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!95 &9133727068577419495
@@ -159,7 +159,7 @@ Animator:
   m_GameObject: {fileID: 7215668658300937306}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 115234c92b663114dba9ab14c3618ed2, type: 2}
+  m_Controller: {fileID: 9100000, guid: fb4c2a5e0e6b2d04bb7526fa9b1ce5eb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

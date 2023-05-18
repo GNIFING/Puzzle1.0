@@ -18,26 +18,23 @@ public class Trash : MonoBehaviour
     private float frequency = 2f; // adjust this value to control the frequency of the coin's movement
     private float elapsedTime = 0f;
 
+    public int score = 1;
 
     private Trash trashInstance;
     private string spawnedLevel;
+
+    public Sprite[] spriteArray;
+    private SpriteRenderer spriteRenderer;
+
+    [SerializeField] private AudioSource playTrashSound;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        // Scene scene = gameObject.scene;
-        // spawnedLevel = scene.name;
-        // if (PlayerPrefs.HasKey(spawnedLevel + "_isVisited") && PlayerPrefs.GetInt(spawnedLevel + "_isVisited") == 1){
-        //     Destroy(gameObject);
-        // } else {
-        //     DontDestroyOnLoad(this);
-        //     if (trashInstance == null){
-        //         trashInstance = this;
-        //     } else {
-        //         Destroy(gameObject);
-        //     }
-        // }
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        int rdnInt = Random.Range(0, spriteArray.Length);
+        spriteRenderer.sprite = spriteArray[rdnInt]; 
     }
 
     // Start is called before the first frame update
@@ -50,8 +47,12 @@ public class Trash : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<PlayerMovement>().AddScore();
-            Destroy(this.transform.parent.gameObject);
+            playTrashSound = gameObject.GetComponent<AudioSource>();
+            playTrashSound.Play();
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            collision.gameObject.GetComponent<PlayerMovement>().AddScore(score);
+            Destroy(this.transform.parent.gameObject, 1f);
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {
