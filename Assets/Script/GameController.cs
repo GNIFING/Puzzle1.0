@@ -152,8 +152,10 @@ public class GameController : MonoBehaviour
         PlayerPrefs.SetInt("studyCourse2Buyed", 0);
 
         PlayerPrefs.SetInt("alreadyDisplay", 0);
-
-
+        
+        PlayerPrefs.SetInt("isPayFirstBill", 0);
+        PlayerPrefs.SetInt("isPaySecondBill", 0);
+        PlayerPrefs.SetInt("isPayThirdBill", 0);
         PlayerPrefs.Save();
     }
 
