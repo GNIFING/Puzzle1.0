@@ -98,5 +98,6 @@ public class HomeManager : MonoBehaviour
         {
             scale = 1f;
         }
+        Debug.Log("moneyScale: " + moneyScale.ToString());
     }
 }
