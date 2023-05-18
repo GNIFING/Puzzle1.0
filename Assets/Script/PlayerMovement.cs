@@ -25,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
     public GameBar staminaBar;
     public inGameScoreBoard scoreBoard;
 
+    // audio source
+    public AudioSource audioSource;
+
     // Player entry position from each scene
     public Vector3 entryFromPrevScene;
     public Vector3 entryFromNextScene;
@@ -150,6 +153,23 @@ public class PlayerMovement : MonoBehaviour
         checkOutOfStamina();
 
         //staminaText.text = ((int)stamina).ToString();
+
+        //update sound speed
+        float audioSpeed = 1f;
+        if (stamina > 50)
+        {
+            audioSpeed = 1f;
+        }
+        else if (stamina > 25)
+        {
+            audioSpeed = 1.1f + (50-stamina) / 25f * 0.3f;
+        }
+        else
+        {
+            audioSpeed = 1.5f;
+        }
+        audioSource.pitch = audioSpeed;
+
     }
 
     IEnumerator StaminaDrain()

@@ -20,6 +20,7 @@ namespace DialogueSystem
             
             for (int i = 0; i < input.Length; i++) {
                 textHolder.text += input[i];
+                Debug.Log(sound);
                 SoundManager.instance.PlaySound(sound);
                 yield return new WaitForSecondsRealtime(delay);
             }
