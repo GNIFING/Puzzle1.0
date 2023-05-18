@@ -24008,6 +24008,8 @@ MonoBehaviour:
   scenesAvailable:
   - Level2
   - Level2_3
+  - Level2_2
+  - Level2_4
   transition: {fileID: 1510991666}
   transitionTime: 0
 --- !u!114 &1667974854

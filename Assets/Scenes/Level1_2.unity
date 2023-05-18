@@ -4039,6 +4039,7 @@ MonoBehaviour:
   - Level2
   - Level2_3
   - Level2_4
+  - Level2_2
   transition: {fileID: 1778685106}
   transitionTime: 0
 --- !u!114 &940029383
