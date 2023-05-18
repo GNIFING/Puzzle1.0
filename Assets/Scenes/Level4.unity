@@ -40227,6 +40227,7 @@ MonoBehaviour:
   - {fileID: 7215668658300937306, guid: 44391edcb039f42dbaab380d87e452f1, type: 3}
   - {fileID: 7215668658300937306, guid: c694208cffc154f8d9d3c96af1bef07e, type: 3}
   - {fileID: 7215668658300937306, guid: a6400161c4d1e4e98bf59a44d8dbcdcb, type: 3}
+  trash: {fileID: 2344449248875028429, guid: 8474d2416b87241d1a211f6121299f23, type: 3}
   goldenTrash: {fileID: 248779164}
   navMesh: {fileID: 1993949400}
 --- !u!1 &2000348305
