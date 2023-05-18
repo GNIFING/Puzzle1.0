@@ -28,9 +28,32 @@ public class MenuController : MonoBehaviour
 
     public void PlayGame()
     {
-        Debug.Log("Play Game");
-        clearInGameState();
-        SceneManager.LoadScene("Level1");
+        if(PlayerPrefs.GetInt("day") == 3 && PlayerPrefs.GetInt("isPayFirstBill") == 0)
+        {
+            SceneManager.LoadScene("GameOverDialogue");
+            Debug.Log("Test");
+        }
+        else if(PlayerPrefs.GetInt("day") == 6 && PlayerPrefs.GetInt("isPaySecondBill") == 0)
+        {
+            SceneManager.LoadScene("GameOverDialogue");
+        }
+        else if (PlayerPrefs.GetInt("day") == 10 && PlayerPrefs.GetInt("isPayThirdBill") == 0)
+        {
+            SceneManager.LoadScene("GameOverDialogue");
+        }
+
+        else
+        {
+            Debug.Log("Play Game");
+            clearInGameState();
+
+            string[] scenesAvailable = new string[]{"Level1", "Level1_2"};
+            int rdnInt = Random.Range(0, scenesAvailable.Length);
+            string randomScene = scenesAvailable[rdnInt];
+            Debug.Log(randomScene);
+
+            SceneManager.LoadScene(randomScene);
+        }
         //PlayerPrefs.SetFloat("maxStamina", 100);
         //PlayerPrefs.SetFloat("stamina", 100);
     }
@@ -55,6 +78,7 @@ public class MenuController : MonoBehaviour
 
     public void ExitHome()
     {
+        home.GetComponent<HomeManager>().ExitHome();
         home.SetActive(false);
     }
 
@@ -92,6 +116,12 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.DeleteKey("Level2_isVisited");
         PlayerPrefs.DeleteKey("Level3_isVisited");
         PlayerPrefs.DeleteKey("Level4_isVisited");
+        PlayerPrefs.DeleteKey("Level1_2_isVisited");
+        PlayerPrefs.DeleteKey("Level1_3_isVisited");
+        PlayerPrefs.DeleteKey("Level2_2_isVisited");
+        PlayerPrefs.DeleteKey("Level2_3_isVisited");
+        PlayerPrefs.DeleteKey("Level3_2_isVisited");
+        PlayerPrefs.DeleteKey("Level3_3_isVisited");
     }
 
     private void clearGameData()

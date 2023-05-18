@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class NextLevelDoor : MonoBehaviour
 {
-    public string sceneToLoad;
+    public string[] scenesAvailable;
     public Animator transition;
     public float transitionTime = 1f;
 
@@ -24,7 +24,11 @@ public class NextLevelDoor : MonoBehaviour
 
     IEnumerator LoadLevel(float maxStamina, float stamina, int usedStamina, int score, int junkLossed)
     {
-        if(sceneToLoad == "Summary"){
+        int rdnInt = Random.Range (0, scenesAvailable.Length);
+        Debug.Log(rdnInt);
+        string randomScene = scenesAvailable[rdnInt];
+
+        if(randomScene == "Summary"){
             PlayerPrefs.DeleteKey("inGameMaxStamina");
             PlayerPrefs.DeleteKey("inGameStamina");
             PlayerPrefs.DeleteKey("inGameScore");
@@ -34,6 +38,12 @@ public class NextLevelDoor : MonoBehaviour
             PlayerPrefs.DeleteKey("Level2_isVisited");
             PlayerPrefs.DeleteKey("Level3_isVisited");
             PlayerPrefs.DeleteKey("Level4_isVisited");
+            PlayerPrefs.DeleteKey("Level1_2_isVisited");
+            PlayerPrefs.DeleteKey("Level1_3_isVisited");
+            PlayerPrefs.DeleteKey("Level2_2_isVisited");
+            PlayerPrefs.DeleteKey("Level2_3_isVisited");
+            PlayerPrefs.DeleteKey("Level3_2_isVisited");
+            PlayerPrefs.DeleteKey("Level3_3_isVisited");
 
             GameObject[] allTrashes = GameObject.FindGameObjectsWithTag("Trash");
             foreach (GameObject trashManager in allTrashes)
@@ -60,7 +70,7 @@ public class NextLevelDoor : MonoBehaviour
 
         yield return new WaitForSeconds(transitionTime);
 
-        SceneManager.LoadScene(sceneToLoad);
-        Debug.Log(sceneToLoad);
+        SceneManager.LoadScene(randomScene);
+        Debug.Log(randomScene);
     }
 }

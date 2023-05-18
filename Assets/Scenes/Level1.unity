@@ -622,7 +622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -770.2, y: 383.6}
+  m_AnchoredPosition: {x: -260.9, y: 147.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &427233491
@@ -672,8 +672,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7060,7 +7060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -7142,7 +7142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d0452d4b17646e38a8cf2e27af9a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Summary
+  scenesAvailable:
+  - Summary
   transition: {fileID: 48516056}
   transitionTime: 0
 --- !u!114 &1416730404
@@ -10916,7 +10917,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d0452d4b17646e38a8cf2e27af9a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Level2
+  scenesAvailable:
+  - Level2
   transition: {fileID: 48516056}
   transitionTime: 0
 --- !u!1 &1679860815
@@ -11192,6 +11194,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8750516983152310845, guid: a39407e22c6f54ca2ab5b011e2d92fee, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.16981131
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750516983152310845, guid: a39407e22c6f54ca2ab5b011e2d92fee, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.079952836
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750516983152310845, guid: a39407e22c6f54ca2ab5b011e2d92fee, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.068084724
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a39407e22c6f54ca2ab5b011e2d92fee, type: 3}
 --- !u!1001 &1845992595
@@ -11263,7 +11277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7215668658300937309, guid: 44391edcb039f42dbaab380d87e452f1, type: 3}
       propertyPath: spotTwo.x
-      value: 10
+      value: 10.5
       objectReference: {fileID: 0}
     - target: {fileID: 7215668658300937309, guid: 44391edcb039f42dbaab380d87e452f1, type: 3}
       propertyPath: spotTwo.y
@@ -11336,7 +11350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7215668658300937309, guid: 44391edcb039f42dbaab380d87e452f1, type: 3}
       propertyPath: spotTwo.x
-      value: 5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 7215668658300937309, guid: 44391edcb039f42dbaab380d87e452f1, type: 3}
       propertyPath: spotTwo.y

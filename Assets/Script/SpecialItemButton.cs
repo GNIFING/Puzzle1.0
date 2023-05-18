@@ -12,7 +12,7 @@ public class SpecialItemButton : MonoBehaviour
     {
         if (textPanel != null)
         {
-            textPanel.SetActive(false);
+            // textPanel.SetActive(false);
             Time.timeScale = 1;
             player.AddScore(20);
             Destroy(parentObject);
