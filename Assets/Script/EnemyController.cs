@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
     public int damage = 1;
     
     protected Transform lastSeenPosition;
-    private UnityEngine.AI.NavMeshAgent enemy;
+    protected UnityEngine.AI.NavMeshAgent enemy;
 
     [SerializeField] private FieldOfView fieldOfView;
     protected bool canSeePlayer;
@@ -48,7 +48,7 @@ public class EnemyController : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    protected virtual void Update()
     {
         GetComponent<UnityEngine.AI.NavMeshAgent>().speed = this.speed;
 
