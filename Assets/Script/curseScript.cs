@@ -113,7 +113,7 @@ public class curseScript : MonoBehaviour
         }
         
         // num of enemy to spawn 5-20 + 5  normal 5
-        int numOfEnemy = Random.Range(5, 10+hardIndicator);
+        int numOfEnemy = Random.Range(5, 10);
         for (int i = 0; i < numOfEnemy; i++)
         {
             spawnEnemy();
@@ -140,24 +140,22 @@ public class curseScript : MonoBehaviour
     }
 
     private GameObject enemyObj;
+
     public void spawnEnemy()
     {
         // spawn enemy type 60/20/20
         int rand = Random.Range(0, 100);
-        Vector3 spawnPosition = GetRandomNavMeshPosition(true);
+        Vector3 spawnPosition = GetRandomNavMeshPosition(false);
         spawnedPositions.Add(spawnPosition);
-
-        Vector3 spotTwo = GetRandomNavMeshPosition(true);
-
+        Vector3 spotTwo = GetRandomNavMeshPosition(false);
         spawnedPositions.Add(spotTwo);
-
         bool isChester = false;
+
 
         if (rand < 70 - 2*hardIndicator)
         {
             // spawn enemy
             enemyObj = Instantiate(enemies[0], spawnPosition, Quaternion.identity);
-            Debug.Log("Gu Spawn wei");
         }
         else if (rand < 80 - 2 * hardIndicator)
         {
@@ -169,13 +167,11 @@ public class curseScript : MonoBehaviour
             // spawn enemy
             enemyObj = Instantiate(enemies[3], spawnPosition, Quaternion.identity);
             isChester = true;
-            Debug.Log("Gu Spawn wei");
         }
         else 
         {
             // spawn enemy
             enemyObj = Instantiate(enemies[2], spawnPosition, Quaternion.identity);
-            Debug.Log("Gu Spawn wei");
         }
 
         Color originalColor = enemyObj.GetComponent<SpriteRenderer>().color;
@@ -193,12 +189,12 @@ public class curseScript : MonoBehaviour
 
         // make enemy faster-slower
         int rand2 = Random.Range(0, 100);
-        if (rand2 < 10 - hardIndicator && !isChester) // make enemy slower
+        if (rand2 < 10 - hardIndicator) // make enemy slower
         {
             enemyObj.GetComponent<EnemyController>().speed = 0.5f;
             brightness += 0.5f;
         }
-        if (rand2 < 20 - hardIndicator  && !isChester)
+        if (rand2 < 20 - hardIndicator)
         {
             enemyObj.GetComponent<EnemyController>().speed = 1.0f;
             brightness += 0.2f;
@@ -275,15 +271,13 @@ public class curseScript : MonoBehaviour
         NavMeshHit hit;
         Vector3 randomPosition;
 
-        int attempts = 0;
-
         do
         {
             randomPosition = origin + Random.insideUnitSphere * range;
         }
-        while (!NavMesh.SamplePosition(randomPosition, out hit, 1f, NavMesh.AllAreas) || (!ignoreTooClose && IsPositionTooClose(randomPosition) && attempts++ < 500));
+        while (!NavMesh.SamplePosition(randomPosition, out hit, 1f, NavMesh.AllAreas) || (!ignoreTooClose && IsPositionTooClose(randomPosition)));
+        
         return hit.position;
-
 
     }
 
