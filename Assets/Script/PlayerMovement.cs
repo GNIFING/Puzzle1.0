@@ -160,9 +160,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void AddScore()
+    public void AddScore(int point)
     {
-        score += 1;
+        score += point;
         scoreText.text = "score :" + score.ToString();
     }
 

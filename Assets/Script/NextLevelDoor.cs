@@ -31,6 +31,7 @@ public class NextLevelDoor : MonoBehaviour
             PlayerPrefs.DeleteKey("Level1_isVisited");
             PlayerPrefs.DeleteKey("Level2_isVisited");
             PlayerPrefs.DeleteKey("Level3_isVisited");
+            PlayerPrefs.DeleteKey("Level4_isVisited");
 
             GameObject[] allTrashes = GameObject.FindGameObjectsWithTag("Trash");
             foreach (GameObject trashManager in allTrashes)

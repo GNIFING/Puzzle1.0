@@ -8,6 +8,8 @@ namespace DialogueSystem
     public class DialogueHolder : MonoBehaviour
     {
         private IEnumerator dialogueSeq;
+        public TutorialDialogueManager tutorialDialogueManager;
+        public bool isTutorialDialogue = false;
 
         private void OnEnable()
         {
@@ -15,11 +17,20 @@ namespace DialogueSystem
             StartCoroutine(dialogueSeq);
         }
 
+        private void Start(){
+            if(isTutorialDialogue){
+                tutorialDialogueManager.startTutorialDialogue();
+            }
+        }
+
         private void Update() {
             if (Input.GetKey(KeyCode.Escape)) {
                 Deactive();
                 gameObject.SetActive(false);
                 StopCoroutine(dialogueSeq);
+                if(isTutorialDialogue){
+                    tutorialDialogueManager.deactivateTutorialDialogue();
+                }
             }
         }
 
@@ -32,7 +43,11 @@ namespace DialogueSystem
                 yield return new WaitUntil(() => transform.GetChild(i).GetComponent<DialogueLine>().finished);
             }
             gameObject.SetActive(false);
-            SceneManager.LoadScene("MainMenu");
+            if(isTutorialDialogue){
+                tutorialDialogueManager.deactivateTutorialDialogue();
+            } else {
+                SceneManager.LoadScene("MainMenu");
+            }
         }
 
         private void Deactive() {
