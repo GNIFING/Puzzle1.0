@@ -73,6 +73,10 @@ public class StoryDialogue : MonoBehaviour
         SceneManager.LoadScene("MainMenuForReal");
     }
 
+    public void ToCreditScene()
+    {
+        SceneManager.LoadScene("Credit");
+    }
     public void ToGameOver()
     {
         SceneManager.LoadScene("GameOver");
