@@ -106,14 +106,14 @@ public class curseScript : MonoBehaviour
         isNavMeshBuilt = true;
 
         // num of trash to spawn 15-50  normal 30
-        int numOfTrash = Random.Range(15, 50 - 2*hardIndicator);
+        int numOfTrash = Random.Range(20, 50 - 2*hardIndicator);
         for (int i = 0; i < numOfTrash; i++)
         {
             spawnTrash();
         }
         
-        // num of enemy to spawn 3-10  normal 5
-        int numOfEnemy = Random.Range(3+2*hardIndicator, 10+hardIndicator);
+        // num of enemy to spawn 5-20 + 5  normal 5
+        int numOfEnemy = Random.Range(5, 10+hardIndicator);
         for (int i = 0; i < numOfEnemy; i++)
         {
             spawnEnemy();
@@ -276,7 +276,7 @@ public class curseScript : MonoBehaviour
         {
             randomPosition = origin + Random.insideUnitSphere * range;
         }
-        while (!NavMesh.SamplePosition(randomPosition, out hit, 1f, NavMesh.AllAreas) || (!ignoreTooClose && IsPositionTooClose(randomPosition) && attempts++ < 100));
+        while (!NavMesh.SamplePosition(randomPosition, out hit, 1f, NavMesh.AllAreas) || (!ignoreTooClose && IsPositionTooClose(randomPosition) && attempts++ < 500));
         return hit.position;
 
 

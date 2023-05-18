@@ -2921,7 +2921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &567948923
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11160,6 +11160,10 @@ PrefabInstance:
       propertyPath: transition
       value: 
       objectReference: {fileID: 48516056}
+    - target: {fileID: 8750516981241772989, guid: a39407e22c6f54ca2ab5b011e2d92fee, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 909710894}
     - target: {fileID: 8750516981241772989, guid: a39407e22c6f54ca2ab5b011e2d92fee, type: 3}
       propertyPath: staminaText
       value: 

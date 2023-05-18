@@ -685,6 +685,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8750516981241772989, guid: a39407e22c6f54ca2ab5b011e2d92fee, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 428949245}
+    - target: {fileID: 8750516981241772989, guid: a39407e22c6f54ca2ab5b011e2d92fee, type: 3}
       propertyPath: entryFromNextScene.x
       value: 17.5
       objectReference: {fileID: 0}
