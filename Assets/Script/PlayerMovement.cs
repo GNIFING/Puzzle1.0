@@ -53,6 +53,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float transitionTime = 1f;
 
+    // JoyStick
+    public MoveMentJoyStick moveMentJoyStick;
 
     private void Awake()
     {
@@ -120,10 +122,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        // Get the horizontal and vertical axes input
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
+        // // Get the horizontal and vertical axes input
+        float horizontal = moveMentJoyStick.joystickVec.x;
+        float vertical = moveMentJoyStick.joystickVec.y;
+    
 
         // Calculate the direction of movement
         Vector2 movement = new Vector2(horizontal, vertical);
@@ -176,17 +178,21 @@ public class PlayerMovement : MonoBehaviour
     {
         while (true)
         {
-            if (stamina < maxStamina && stamina > 0)
+            if (stamina > 0)
             {
                 stamina -= 1f;
             }
             // if player move
-            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            if (moveMentJoyStick.joystickVec.x != 0 || moveMentJoyStick.joystickVec.y != 0)
             {
-                if (stamina > 2)
+                if (stamina > 0)
                 {
                     stamina -= 0.5f;
                 }
+            }  
+            if (stamina <= 0)
+            {
+                stamina = 0;
             }
             staminaBar.Set(Mathf.RoundToInt(stamina));
             yield return new WaitForSeconds(1f);
