@@ -15119,7 +15119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialDialogue: {fileID: 205468948}
-  level: 6
+  level: 5
 --- !u!1 &832037628
 GameObject:
   m_ObjectHideFlags: 0

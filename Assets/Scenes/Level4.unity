@@ -40248,7 +40248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialDialogue: {fileID: 98856067}
-  level: 4
+  level: 7
 --- !u!1001 &1813285235
 PrefabInstance:
   m_ObjectHideFlags: 0
